@@ -7,14 +7,14 @@
     </resultMap>
 <!--查询所有分类-->
 <select id="getCategoryList" resultType="com.shop.pojo.Category"  resultMap="CategoryResultMapper">
-    SELECT * FROM category
+    SELECT * FROM category where alive = 1
 </select>
 <select id="getListByfid" resultType="com.shop.pojo.Category" resultMap="CategoryResultMapper">
-    SELECT * FROM category where fid = #{fid}
+    SELECT * FROM category where fid = #{fid} and alive = 1
 </select>
 <!--根据id查询分类    -->
 <select id="getCategory" resultType="com.shop.pojo.Category"  resultMap="CategoryResultMapper">
-    SELECT * FROM category where id = #{id}
+    SELECT * FROM category where id = #{id} and alive = 1
 </select>
 <!--    新增分类-->
 <insert id="addCategory" parameterType="com.shop.pojo.Category">
@@ -25,7 +25,7 @@
 <update id="updateCategory" parameterType="com.shop.pojo.Category">
     update category set name = #{name} where id = #{id}
 </update>
-<delete id="deleteCategory">
-    delete from category where id = #{id}
-</delete>
+<update id="deleteCategory">
+    update category set alive = 0 where id = #{id}
+</update>
 </mapper>

@@ -10,6 +10,6 @@
     </resultMap>
 <!--根据厂商id查询-->
 <select id="queryForLogin" resultType="com.shop.pojo.Firm"  resultMap="FirmResultMapper">
-    SELECT * FROM firm  Where binary name = #{name} AND password = #{password}
+    select * from firm  where binary alive = 1 and name = #{name} and password = #{password}
 </select>
 </mapper>

@@ -9,7 +9,7 @@
     </resultMap>
 <!--根据管理员id查询-->
 <select id="queryForLogin" resultType="com.shop.pojo.Admin"  resultMap="AdminResultMapper">
-    SELECT * FROM admin  Where binary name = #{name} AND password = #{password}
+    SELECT * FROM admin  Where binary alive = 1 and name = #{name} AND password = #{password}
 </select>
 
 </mapper>

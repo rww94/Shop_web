@@ -1,6 +1,9 @@
 package com.shop.pojo;
 
+import com.shop.service.OrderService;
+
 import java.util.Date;
+import java.util.List;
 
 public class Order {
     /*
@@ -31,12 +34,9 @@ public class Order {
     * 用户留言
     * */
     private String user_message;
+
     /*
-    * 厂商id
-    * */
-    private Integer fid;
-    /*
-    * 厂商信息
+    * 厂商备注信息
     * */
     private String firm_message;
     /*
@@ -55,6 +55,46 @@ public class Order {
     * 订单状态
     * */
     private String status;
+    /*
+    * 订单总价
+    * */
+    private float totalPrice;
+    /*
+     * 订单内商品总数量
+     * */
+    private Integer productNumber;
+    /*
+     * 订单元素项
+     * */
+    private List<OrderItem> orderItemList;
+    /*
+    * 订单所属用户信息
+    * */
+    private User user;
+
+    public float getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(float totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public Integer getProductNumber() {
+        return productNumber;
+    }
+
+    public void setProductNumber(Integer productNumber) {
+        this.productNumber = productNumber;
+    }
+
+    public List<OrderItem> getOrderItemList() {
+        return orderItemList;
+    }
+
+    public void setOrderItemList(List<OrderItem> orderItemList) {
+        this.orderItemList = orderItemList;
+    }
 
     public Integer getId() {
         return id;
@@ -112,14 +152,6 @@ public class Order {
         this.user_message = user_message;
     }
 
-    public Integer getFid() {
-        return fid;
-    }
-
-    public void setFid(Integer fid) {
-        this.fid = fid;
-    }
-
     public String getFirm_message() {
         return firm_message;
     }
@@ -158,5 +190,37 @@ public class Order {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+    public String statusChange(){
+        String desc = null;
+        switch (status){
+            case OrderService.waitPay:
+                desc="待付款";
+                break;
+
+            case OrderService.waitConfirm:
+                desc="待确认";
+                break;
+            case OrderService.finish:
+                desc="已确认";
+                break;
+            case OrderService.refuse:
+                desc="以拒绝";
+                break;
+            case OrderService.delete:
+                desc="刪除";
+                break;
+            default:
+                desc="异常";
+        }
+        return desc;
     }
 }

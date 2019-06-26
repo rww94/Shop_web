@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shop.mapper.OrderMapper" >
+    <resultMap id="OrderResultMapper" type="com.shop.pojo.Order" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="orderCode" property="orderCode" jdbcType="VARCHAR" />
+        <result column="uid" property="uid" jdbcType="INTEGER" />
+        <result column="receiver" property="receiver" jdbcType="VARCHAR" />
+        <result column="address" property="address" jdbcType="VARCHAR" />
+        <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+        <result column="user_message" property="user_message" jdbcType="VARCHAR" />
+        <result column="firm_message" property="firm_message" jdbcType="VARCHAR" />
+        <result column="create_date" property="create_date" jdbcType="TIMESTAMP" />
+        <result column="pay_date" property="pay_date" jdbcType="TIMESTAMP" />
+        <result column="confirm_date" property="confirm_date" jdbcType="TIMESTAMP" />
+        <result column="status" property="status" jdbcType="VARCHAR" />
+    </resultMap>
+<!--    插入订单项-->
+<insert id="insertOrder" parameterType="com.shop.pojo.Order" useGeneratedKeys="true" keyProperty="id" >
+    insert into order_ (orderCode, uid, receiver, address, mobile, user_message, firm_message,
+    create_date, pay_date, confirm_date, status)
+    values (#{orderCode}, #{uid}, #{receiver},#{address}, #{mobile}, #{user_message},#{firm_message},
+      #{create_date}, #{pay_date}, #{confirm_date}, #{status})
+</insert>
+<!--    根据订单id查询-->
+<select id="getById" parameterType="java.lang.Integer" resultMap="OrderResultMapper">
+    select * from order_ where id = #{id}
+</select>
+<!--用户下单更新订单-->
+<update id="updateOrder"  parameterType="com.shop.pojo.Order">
+    update order_ set pay_date = #{pay_date}, confirm_date = #{confirm_date}, status = #{status}
+    where id = #{id}
+</update>
+<!--    通过用户id得到所属订单-->
+<select id="getListByUid" parameterType="java.lang.Integer" resultMap="OrderResultMapper">
+    select * from order_ where uid = #{uid}
+</select>
+<!--    得到所有订单-->
+<select id="getList" resultMap="OrderResultMapper">
+    select * from order_
+</select>
+<update id="updateStatus" >
+    update order_ set status = #{status}
+    where id = #{id}
+</update>
+</mapper>

@@ -41,4 +41,24 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> getProductsBycid(Integer cid) {
         return productMapper.selectByCategoryId(cid);
     }
+
+    @Override
+    public void updateProduct(Product product) {
+        productMapper.updateProduct(product);
+    }
+
+    @Override
+    public void addProduct(Product product) {
+        productMapper.addProduct(product);
+    }
+
+    @Override
+    public void deleteProduct(Product product) {
+        productMapper.deleteProduct(product);
+    }
+
+    @Override
+    public List<Product> getAllProduct() {
+        return productMapper.getAllProduct();
+    }
 }

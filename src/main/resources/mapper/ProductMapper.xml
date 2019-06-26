@@ -13,15 +13,32 @@
     </resultMap>
 <!--根据种类id查询种类下的商品-->
 <select id="selectByCategoryId" resultType="com.shop.pojo.Product"  resultMap="ProductResultMapper">
-    SELECT * FROM product where cid = #{id}
+    SELECT * FROM product where alive = 1 and cid = #{id}
 </select>
 <!--根据商品id查找商品信息    -->
 <select id="getById" resultType="com.shop.pojo.Product"  resultMap="ProductResultMapper">
-    SELECT * FROM product where id = #{id}
+    SELECT * FROM product where alive = 1 and id = #{id}
 </select>
     <!--根据关键词查找商品信息    -->
 <select id="searchBykeyword" parameterType="java.lang.String" resultType="com.shop.pojo.Product"  resultMap="ProductResultMapper">
-    SELECT product.* FROM product,category where product.cid = category.id and
+    SELECT product.* FROM product,category where alive = 1 and product.cid = category.id and
     (product.name like"%"#{keyword}"%" or product.message like"%"#{keyword}"%" or category.name like"%"#{keyword}"%")
 </select>
+<!--    更新商品信息-->
+<update id="updateProduct" parameterType="com.shop.pojo.Product">
+    update product set name = #{name}, original_price = #{original_price},
+     now_price = #{now_price}, message = #{message}, stock_number = #{stock_number} where id = #{id}
+</update>
+<!--    添加新商品-->
+<insert id="addProduct" parameterType="com.shop.pojo.Product">
+    insert into product(name,original_price,now_price,stock_number,cid,create_date,message)
+    values(#{name},#{original_price},#{now_price},#{stock_number},#{cid},#{create_date},#{message})
+</insert>
+<!--    查找所有商品-->
+<select id="getAllProduct" resultMap="ProductResultMapper">
+    select * from product where alive = 1
+</select>
+<update id="deleteProduct" parameterType="com.shop.pojo.Product">
+    update product set alive = 0 where id =#{id}
+</update>
 </mapper>

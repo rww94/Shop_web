@@ -27,4 +27,20 @@ public interface ProductService {
     * 通过种类查询商品
     * */
     public List<Product> getProductsBycid(Integer cid);
+    /*
+    * 更新商品信息
+    * */
+    void updateProduct(Product product);
+    /*
+    * 添加商品
+    * */
+    void addProduct(Product product);
+    /*
+    * 删除商品
+    * */
+    void deleteProduct(Product product);
+    /*
+    * 得到所有商品
+    * */
+    List<Product> getAllProduct();
 }

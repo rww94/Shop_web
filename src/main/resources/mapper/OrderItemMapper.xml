@@ -15,6 +15,13 @@
        values (#{pid}, #{uid}, #{oid}, #{price}, #{number})
 </insert>
 <select id="getById" resultMap="OrderItemResultMapper" parameterType="java.lang.Integer">
-    select * from orderitem where id = #{id,jdbcType=INTEGER}
+    select * from orderitem where alive = 1 and id = #{id,jdbcType=INTEGER}
+</select>
+<update id="updateById" parameterType="com.shop.pojo.OrderItem" >
+    update orderitem set pid = #{pid},uid = #{uid},oid = #{oid},price = #{price}, number = #{number}
+    where id = #{id}
+</update>
+<select id="getListByOid" parameterType="java.lang.Integer" resultMap="OrderItemResultMapper">
+    select * from orderitem where oid = #{oid}
 </select>
 </mapper>

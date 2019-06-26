@@ -12,16 +12,16 @@
     </resultMap>
 <!--用户登录验证-->
 <select id="queryForLogin" resultType="com.shop.pojo.User"  resultMap="UserResultMapper">
-    SELECT * FROM users  Where binary name = #{name} AND password = #{password}
+    SELECT * FROM users  Where binary alive = 1 and name = #{name} AND password = #{password}
 </select>
 <!--查询用户列表    -->
 <select id="getUserList" resultType="com.shop.pojo.User" resultMap="UserResultMapper">
-    SELECT * FROM users
+    SELECT * FROM users where alive = 1
 </select>
 <!--删除用户-->
-<delete id="deleteUser" parameterType="java.lang.Integer">
-    delete from users where id = #{id,jdbcType=INTEGER}
-</delete>
+<update id="deleteUser" parameterType="java.lang.Integer">
+    update users set alive = 0 where id = #{id}
+</update>
 <!--    插入用户-->
 <insert id="addUser" parameterType="com.shop.pojo.User">
     insert into users(name,password,sex,telephone,address,email)
@@ -29,7 +29,7 @@
 </insert>
 <!--    根据用户id查询用户-->
 <select id="getById" parameterType="java.lang.Integer" resultType="com.shop.pojo.User">
-    select * from users where id = #{id};
+    select * from users where alive = 1 and id = #{id};
 </select>
 <!--    更新用户信息-->
 <update id="editUser" parameterType="com.shop.pojo.User">
@@ -41,6 +41,6 @@
 </update>
 <!--    根据用户名查询用户-->
 <select id="getByName" parameterType="java.lang.String" resultType="com.shop.pojo.User">
-    select * from users where binary name = #{name};
+    select * from users where binary alive = 1 and name = #{name};
 </select>
 </mapper>

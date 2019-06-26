@@ -51,7 +51,7 @@ public class ForeLoginInterceptor extends HandlerInterceptorAdapter {
             if(!Arrays.asList(noNeedLoginPage).contains(s)){
                 User user = (User) session.getAttribute("user");
                 if(null == user){
-                    response.sendRedirect("Login");
+                    response.sendRedirect("../user/Login");
                     return false;
                 }
             }

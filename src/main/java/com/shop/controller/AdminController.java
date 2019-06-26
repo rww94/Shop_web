@@ -5,6 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.shop.pojo.Firm;
 import com.shop.pojo.User;
 import com.shop.service.UserService;
+import com.shop.util.MD5Util;
 import com.shop.util.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -43,10 +44,13 @@ public class AdminController {
     * 登陆验证
     * */
     @RequestMapping("admin_login")
-    public String adminlogin(HttpServletRequest request, String name, String password, HttpSession session){
+    public String adminlogin(HttpServletRequest request,HttpSession session){
+        String name = request.getParameter("name");
+        String password = request.getParameter("password");
         if(null==name||null==password){
             return "admin/login";
         }
+        password = MD5Util.MD5EncodeUtf8(password);
         Admin admin = adminService.queryForLogin(name,password);
         // 用户不存在则回到登录界面
         if (null == admin){
@@ -143,6 +147,7 @@ public class AdminController {
 
         List<User> old_users = userService.getByName(user.getName());
         if (old_users.isEmpty()){
+            user.setPassword(MD5Util.MD5EncodeUtf8(user.getPassword()));
             userService.addUser(user);
             out.print("<script language=\"javascript\">alert('添加用户成功')</script>");
 
