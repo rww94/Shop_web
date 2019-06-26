@@ -15,6 +15,7 @@
         body{font-family:Microsoft YaHei,Segoe UI,Tahoma,Arial,Verdana,sans-serif;font-size:12px;color:#fff;height:100%;line-height:1;background:#985f0d}
     </style>
     <script type="text/javascript" src="../js/jquery/2.0.0/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -31,7 +32,7 @@
         </div>
         <br/>
         <div class="login">
-            <button type="submit" tabindex="5">登录</button>
+            <button type="submit" tabindex="5" onClick="return login()">登录</button>
         </div>
     </form>
     <br/>
@@ -64,7 +65,7 @@
             $("#password")[0].focus();
             return false;
         }
-
+        return true;
     }
 </script>
 </body>

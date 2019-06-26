@@ -40,7 +40,7 @@
     <div class="panel panel-warning editDiv">
         <div class="panel-heading">修改密码</div>
         <div class="panel-body">
-            <form method="post" id="editForm" action="<%=basePath%>/user/editPassword">
+            <form target="_top" method="post" id="editForm" action="<%=basePath%>/user/editPassword">
                 <table class="editTable">
                     <tr>
                         <td>密码:</td>

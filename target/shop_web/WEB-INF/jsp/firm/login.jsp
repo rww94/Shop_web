@@ -31,7 +31,7 @@
         </div>
         <br/>
         <div class="login">
-            <button type="submit" tabindex="5">登录</button>
+            <button type="submit" onClick="return login()" tabindex="5">登录</button>
         </div>
     </form>
 </div>

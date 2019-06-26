@@ -7,334 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="350212b3-0f18-4bde-9a21-2af796f1d2c9" name="Default Changelist" comment="订单功能完成">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shop/mapper/OrderMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shop/service/Impl/OrderServiceimpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shop/service/OrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shop/util/MD5Util.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrderMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/test/com/shop/controller/AdminControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/test/com/shop/service/BaseServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/test/com/shop/service/CategoryServiceServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/test/com/shop/service/OrderServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/test/com/shop/service/UserServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/firm/listAllProduct.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/firm/listOrder.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/fore/userOrder.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/productSingle/default.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/site/alipay.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/shop/mapper/OrderMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/shop/service/Impl/OrderServiceimpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/shop/service/OrderService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/shop/util/MD5Util.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/OrderMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/controller/AdminController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/controller/FirmController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/controller/ForeController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/controller/UserController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/interceptor/ForeLoginInterceptor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/mapper/OrderItemMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/mapper/OrderMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/mapper/ProductMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/pojo/Order.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/service/Impl/OrderItemServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/service/Impl/OrderServiceimpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/service/Impl/ProductServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/service/OrderItemService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/service/OrderService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/service/ProductService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/util/MD5Util.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/mapper/OrderMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/admin/login.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/firm/listAllProduct.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/firm/listOrder.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/firm/login.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/fore/alipay.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/fore/userOrder.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/user/login.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/lib/junit-4.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/default.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop_web/images/site/alipay.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/com/shop/controller/AdminControllerTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/com/shop/service/BaseServiceTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/com/shop/service/CategoryServiceServiceTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/com/shop/service/OrderServiceTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/com/shop/service/UserServiceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/shop_web_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/shop_web_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/controller/AdminController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/controller/FirmController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/controller/ForeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/interceptor/AdminLoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/interceptor/AdminLoginInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/interceptor/FirmLoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/interceptor/FirmLoginInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/interceptor/ForeLoginInterceptor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/interceptor/UserLoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/interceptor/UserLoginInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/mapper/AdminMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/mapper/AdminMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/mapper/CategoryMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/mapper/CategoryMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/mapper/FirmMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/mapper/FirmMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/mapper/OrderItemMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/mapper/ProductMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/mapper/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/pojo/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/pojo/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/pojo/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/pojo/Category.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/pojo/Firm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/pojo/Firm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/pojo/Order.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/pojo/OrderItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/pojo/OrderItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/pojo/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/pojo/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/pojo/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/pojo/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/service/AdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/service/AdminService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/service/CategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/service/CategoryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/service/FirmService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/service/FirmService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/service/Impl/AdminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/service/Impl/AdminServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/service/Impl/CategoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/service/Impl/CategoryServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/service/Impl/FirmServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/service/Impl/FirmServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/service/Impl/OrderItemServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/service/Impl/ProductServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/service/Impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/service/Impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/service/OrderItemService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/service/ProductService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/com/shop/util/Page.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/com/shop/util/Page.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/jdbc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/mapper/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/mapper/AdminMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/mapper/CategoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/mapper/CategoryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/mapper/FirmMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/mapper/FirmMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/mapper/OrderItemMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/mapper/OrderItemMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/mapper/ProductMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/mapper/ProductMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/classes/springMVC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/classes/springMVC.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/admin/addFirm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/admin/addFirm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/admin/addUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/admin/addUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/admin/adminHome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/admin/adminHome.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/admin/listFirm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/admin/listFirm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/admin/listUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/admin/listUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/admin/login.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/fail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/fail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/failLogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/failLogin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/firm/addCategory.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/firm/addCategory.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/firm/editCategory.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/firm/editCategory.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/firm/editProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/firm/editProduct.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/firm/firmHome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/firm/firmHome.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/firm/listCategory.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/firm/listCategory.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/firm/listProductByCategory.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/firm/listProductByCategory.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/firm/login.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/fore/alipay.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/fore/bought.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/fore/buy.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/fore/buy.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/fore/confirmPay.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/fore/foreHome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/fore/foreHome.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/fore/myInformation.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/fore/orderConfirmed.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/fore/pay.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/fore/pay.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/fore/searchResult.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/fore/searchResult.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/fore/shoppingCart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/fore/shoppingCart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/fore/showCategory.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/fore/showCategory.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/fore/showProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/fore/showProduct.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/include/admin/adminHeader.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/include/admin/adminHeader.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/include/admin/adminPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/include/admin/adminPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/include/admin/main_content.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/include/admin/main_content.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/include/admin/main_left.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/include/admin/main_left.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/include/firm/main_content.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/include/firm/main_content.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/include/firm/main_left.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/include/firm/main_left.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/include/fore/categoryAndCarousel.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/include/fore/categoryAndCarousel.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/include/fore/homePageCategoryProducts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/include/fore/homePageCategoryProducts.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/include/fore/top.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/include/fore/top.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/include/fore/top_nosearch.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/include/fore/top_nosearch.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/include/user/main_content.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/include/user/main_content.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/include/user/main_left.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/include/user/main_left.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/user/editPassword.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/user/editPassword.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/user/editUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/user/editUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/user/login.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/user/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/user/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/jsp/user/userHome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/user/userHome.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/aspectjweaver-1.6.8.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/lib/aspectjweaver-1.6.8.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/c3p0-0.9.1.2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/lib/c3p0-0.9.1.2.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/commons-lang-2.6.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/lib/commons-lang-2.6.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/druid-1.0.18.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/lib/druid-1.0.18.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/hamcrest-core-1.3.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/lib/hamcrest-core-1.3.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/jconsole.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/jsqlparser-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/lib/jsqlparser-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/lib/jstl-1.2.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/junit-4.11.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/log4j-1.2.12.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/lib/log4j-1.2.12.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/mybatis-3.4.5.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/lib/mybatis-3.4.5.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/mybatis-spring-1.3.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/lib/mybatis-spring-1.3.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/mysql-connector-java-5.1.47.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/lib/mysql-connector-java-5.1.47.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/pagehelper-5.1.2-beta.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/lib/pagehelper-5.1.2-beta.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/slf4j-api-1.6.6.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/lib/slf4j-api-1.6.6.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/slf4j-log4j12-1.6.6.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/lib/slf4j-log4j12-1.6.6.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/spring-aop-5.0.2.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/lib/spring-aop-5.0.2.RELEASE.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/spring-beans-5.0.2.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/lib/spring-beans-5.0.2.RELEASE.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/spring-context-5.0.2.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/lib/spring-context-5.0.2.RELEASE.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/spring-core-5.0.2.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/lib/spring-core-5.0.2.RELEASE.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/spring-expression-5.0.2.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/lib/spring-expression-5.0.2.RELEASE.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/spring-jcl-5.0.2.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/lib/spring-jcl-5.0.2.RELEASE.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/spring-jdbc-5.0.2.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/lib/spring-jdbc-5.0.2.RELEASE.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/spring-test-5.0.2.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/lib/spring-test-5.0.2.RELEASE.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/spring-tx-5.0.2.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/lib/spring-tx-5.0.2.RELEASE.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/spring-web-5.0.2.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/lib/spring-web-5.0.2.RELEASE.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/spring-webmvc-5.0.2.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/lib/spring-webmvc-5.0.2.RELEASE.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/lib/tools.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/css/back/layui.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/css/back/layui.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/css/back/nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/css/back/nav.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/css/back/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/css/back/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/css/bootstrap/3.3.6/bootstrap-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/css/bootstrap/3.3.6/bootstrap-theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/css/bootstrap/3.3.6/bootstrap-theme.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/css/bootstrap/3.3.6/bootstrap-theme.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/css/bootstrap/3.3.6/bootstrap-theme.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/css/bootstrap/3.3.6/bootstrap-theme.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/css/bootstrap/3.3.6/bootstrap-theme.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/css/bootstrap/3.3.6/bootstrap-theme.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/css/bootstrap/3.3.6/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/css/bootstrap/3.3.6/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/css/bootstrap/3.3.6/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/css/bootstrap/3.3.6/bootstrap.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/css/bootstrap/3.3.6/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/css/bootstrap/3.3.6/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/css/bootstrap/3.3.6/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/css/bootstrap/3.3.6/bootstrap.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/css/bootstrap/fonts/glyphicons-halflings-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/css/bootstrap/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/css/bootstrap/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/css/bootstrap/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/css/bootstrap/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/css/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/css/bootstrap/fonts/glyphicons-halflings-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/css/bootstrap/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/css/bootstrap/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/css/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/css/font/iconfont.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/css/font/iconfont.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/css/fore/inputEffect.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/css/fore/inputEffect.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/css/fore/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/css/fore/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/css/fore/normalize.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/css/fore/normalize.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/css/fore/sign-up-login.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/css/fore/sign-up-login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/css/fore/spop.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/css/fore/spop.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/css/fore/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/css/fore/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/css/fore/tooltips.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/css/fore/tooltips.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/css/forehome/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/css/forehome/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/css/mystyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/css/mystyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/5476ba25Ne75aa640.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/SANGSHUIY.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/carousel/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/carousel/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/carousel/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/carousel/2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/carousel/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/carousel/3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/carousel/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/carousel/4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/decrease.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/decrease.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/increase.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/increase.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/owl-login.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/owl-login@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/044c52520956ebfb.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/044c52520956ebfb.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/0a5f5e008d032291.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/0a5f5e008d032291.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/1561010137.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/1561010137.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/1561010619.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/1561010619.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/19f155adacf55419.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/19f155adacf55419.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/2361563781a99acb.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/2361563781a99acb.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/33a7f344f14d5413.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/33a7f344f14d5413.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/344e4bcf01847882.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/344e4bcf01847882.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/35010a834b806ec6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/35010a834b806ec6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/39f12b660ba8a671.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/39f12b660ba8a671.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/500f99a976998161.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/500f99a976998161.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/5420f5be0bcd3721.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/5420f5be0bcd3721.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/5abb6b5bN151761c1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/5abb6b5bN151761c1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/5bea36b6N79ca2695.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/5bea36b6N79ca2695.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/5cdb8d46Na6975595.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/5cdb8d46Na6975595.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/5cdbaa17N14c37b8f.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/5cdbaa17N14c37b8f.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/5ce4148aN55586a52.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/5ce4148aN55586a52.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/5ce4f888N01ba2454.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/5ce4f888N01ba2454.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/5e93dbb87a8c354d.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/5e93dbb87a8c354d.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/6efe62222097d1b1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/6efe62222097d1b1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/77b5bdc2006f3028.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/77b5bdc2006f3028.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/8930b417c9eb4619.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/8930b417c9eb4619.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/957eb134fff9b8a7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/957eb134fff9b8a7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/9cd57e3a481c7160.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/9cd57e3a481c7160.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/b69dbf5d4cd8330d.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/b69dbf5d4cd8330d.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/baa1f183ddc76ebf.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/baa1f183ddc76ebf.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/c4780ea8b7d0c6e7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/c4780ea8b7d0c6e7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/cc61ce9e0d53fee9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/cc61ce9e0d53fee9.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/d9d9375ab2b1b83f.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/d9d9375ab2b1b83f.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/eeef5ed63916348c.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/eeef5ed63916348c.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/f13d6c2e3bfc5e11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/f13d6c2e3bfc5e11.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/productSingle/f43d5b12864ab86a.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/productSingle/f43d5b12864ab86a.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/site/alipay2wei.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/site/cartNotSelected.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/site/cartNotSelected.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/site/cartSelected.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/site/cartSelected.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/site/comformPayFlow.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/site/comformPayFlow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/site/decrease.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/site/decrease.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/site/increase.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/site/increase.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/site/orderFinish.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/site/orderFinish.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/site/paySuccess.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/images/site/paySuccess.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/images/snow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/js/bootstrap/3.3.6/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/js/bootstrap/3.3.6/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/js/bootstrap/3.3.6/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/js/bootstrap/3.3.6/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/js/bootstrap/3.3.6/npm.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/js/bootstrap/3.3.6/npm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/js/jquery.pure.tooltips.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/js/jquery.pure.tooltips.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/js/jquery/2.0.0/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/js/jquery/2.0.0/jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/js/nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/js/nav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/js/snow.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/js/spop.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/js/spop.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shop_web_war/js/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/js/style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shop/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shop/controller/FirmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/controller/FirmController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shop/controller/ForeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/controller/ForeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shop/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shop/interceptor/ForeLoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/interceptor/ForeLoginInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shop/mapper/OrderItemMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/mapper/OrderItemMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shop/mapper/ProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/mapper/ProductMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shop/pojo/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/pojo/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shop/service/Impl/OrderItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/service/Impl/OrderItemServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shop/service/Impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/service/Impl/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shop/service/OrderItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/service/OrderItemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shop/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/AdminMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CategoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CategoryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/FirmMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/FirmMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/OrderItemMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrderItemMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ProductMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ProductMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/addUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/addUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/firm/editProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/firm/editProduct.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/firm/listProductByCategory.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/firm/listProductByCategory.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/firm/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/firm/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/fore/alipay.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/fore/alipay.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/fore/bought.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/fore/buy.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/fore/buy.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/fore/confirmPay.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/fore/foreHome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/fore/foreHome.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/fore/myInformation.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/fore/orderConfirmed.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/fore/pay.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/fore/pay.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/fore/searchResult.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/fore/searchResult.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/fore/showProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/fore/showProduct.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/include/admin/adminHeader.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/include/admin/adminHeader.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/include/firm/main_left.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/include/firm/main_left.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/include/fore/top.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/include/fore/top.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/include/fore/top_nosearch.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/include/fore/top_nosearch.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/editPassword.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/editPassword.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/5476ba25Ne75aa640.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/SANGSHUIY.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/owl-login.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/owl-login@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/site/alipay2wei.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/snow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/snow.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/shop/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/shop/controller/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/shop/controller/FirmController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/shop/controller/FirmController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/shop/controller/ForeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/shop/controller/ForeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/shop/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/shop/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/shop/interceptor/ForeLoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/shop/interceptor/ForeLoginInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/shop/mapper/OrderItemMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/shop/mapper/OrderItemMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/shop/mapper/ProductMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/shop/mapper/ProductMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/shop/pojo/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/shop/pojo/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/shop/service/Impl/OrderItemServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/shop/service/Impl/OrderItemServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/shop/service/Impl/ProductServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/shop/service/Impl/ProductServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/shop/service/OrderItemService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/shop/service/OrderItemService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/shop/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/shop/service/ProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/AdminMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CategoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/CategoryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/FirmMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/FirmMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/OrderItemMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/OrderItemMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ProductMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/ProductMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/shop_web.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/user/editPassword.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop_web/WEB-INF/jsp/user/editPassword.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -361,7 +39,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/shop/controller/ForeController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
@@ -374,10 +52,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/shop/controller/FirmController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/editPassword.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="244" column="5" lean-forward="true" selection-start-line="244" selection-start-column="5" selection-end-line="244" selection-end-column="5" />
+            <state relative-caret-position="204">
+              <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/login.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="29" column="26" lean-forward="true" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/firm/login.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="33" column="71" selection-start-line="33" selection-start-column="71" selection-end-line="33" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/login.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="31" column="58" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -421,24 +126,6 @@
                 <element signature="e#2108#2109#0" expanded="true" />
                 <element signature="e#2169#2170#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/OrderMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="43" column="20" lean-forward="true" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/AdminMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="59" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -500,9 +187,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/firm/listProductByCategory.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/register.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/shop/service/AdminServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/shop/service/Impl/AdminServiceImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/test/com/shop/mapper/AdminMapperTest.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -551,6 +235,9 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/firm/listOrder.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/shop/pojo/Order.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/shop/controller/ForeController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/editPassword.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/login.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/firm/login.jsp" />
       </list>
     </option>
   </component>
@@ -595,7 +282,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="15" />
     <option name="y" value="30" />
     <option name="width" value="1890" />
@@ -646,37 +333,7 @@
               <item name="shop_web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shop_web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="pojo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shop_web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shop_web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="Impl" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="shop_web" type="b2602c69:ProjectViewProjectNode" />
@@ -684,6 +341,26 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shop_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shop_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="jsp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shop_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shop_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="jsp" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -995,7 +672,7 @@
       <workItem from="1561019231495" duration="554000" />
       <workItem from="1561019812076" duration="537000" />
       <workItem from="1561020371961" duration="49707000" />
-      <workItem from="1561207985290" duration="107823000" />
+      <workItem from="1561207985290" duration="108990000" />
     </task>
     <servers />
   </component>
@@ -1032,7 +709,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="244102000" />
+    <option name="totallyTimeSpent" value="245269000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1044,9 +721,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="704" extended-state="7" />
+    <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26273242" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26273242" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1056,20 +734,20 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.4020979" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.497979" weight="0.20979021" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49717057" visible="true" weight="0.24300699" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3986014" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32867134" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32867134" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="9" sideWeight="0.502021" side_tool="true" visible="true" weight="0.3041958" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50282943" side_tool="true" weight="0.20979021" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.32867134" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.32867134" />
       <window_info anchor="bottom" id="Application Servers" order="13" weight="0.32867134" />
       <window_info anchor="bottom" id="Spring" order="14" weight="0.32867134" />
-      <window_info anchor="bottom" id="Messages" order="15" sideWeight="0.497979" visible="true" weight="0.3041958" />
+      <window_info anchor="bottom" id="Messages" order="15" sideWeight="0.497979" weight="0.3041958" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1089,22 +767,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="订单功能完成" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/login.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/fore/sign-up-login.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/fore/login.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/fore/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="1657" column="36" selection-start-line="1657" selection-start-column="4" selection-end-line="1657" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/shop/util/MD5Util.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
@@ -1456,6 +1118,34 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/editPassword.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="29" column="26" lean-forward="true" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="31" column="58" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/firm/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="33" column="71" selection-start-line="33" selection-start-column="71" selection-end-line="33" selection-end-column="71" />
         </state>
       </provider>
     </entry>
