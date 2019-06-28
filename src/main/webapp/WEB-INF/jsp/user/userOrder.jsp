@@ -9,8 +9,9 @@
         <div class="selectedOrderType"><a orderStatus="all" href="#nowhere">所有订单</a></div>
         <div><a  orderStatus="waitPay" href="#nowhere">待付款</a></div>
         <div><a  orderStatus="waitConfirm" href="#nowhere">待确认</a></div>
-        <div><a  orderStatus="waitReceive" href="#nowhere">待收货</a></div>
+        <div><a  orderStatus="confirmed" href="#nowhere">待收货</a></div>
         <div><a  orderStatus="finished" href="#nowhere">已完成</a></div>
+
         <div><a  orderStatus="others" href="#nowhere">其他</a></div>
 
         <div class="orderTypeLastOne" style="padding-top: 22px"><a class="noRightborder"> </a></div>
@@ -73,7 +74,8 @@
                                 <c:if test="${o.status=='refused' }">
                                     <span>商家已拒绝</span>
                                 </c:if>
-                                <c:if test="${o.status=='waitReceive' }">
+                                <c:if test="${o.status=='confirmed' }">
+                                    <span>商家已确认</span><br/>
                                     <span>待收货</span>
                                 </c:if>
                                 <c:if test="${o.status=='finished' }">
@@ -89,14 +91,14 @@
                                         <button class="orderListItemConfirm">取消</button>
                                     </a>
                                 </c:if>
-                                <c:if test="${o.status=='waitReceive'}">
+                                <c:if test="${o.status=='confirmed'}">
                                     <a href="<%=basePath%>/user/updateOrderStatus?orderId=${o.id}&orderStatus=finished">
                                         <button class="orderListItemConfirm">确认收货</button>
                                     </a>
                                 </c:if>
-                                <c:if test="${o.status=='finished'||o.status=='canceled'||o.status=='refused'}">
-                                    <a href="<%=basePath%>/user/updateOrderStatus?orderId=${o.id}&orderStatus=deleted">
-                                        <button class="orderListItemConfirm">删除订单</button>
+                                <c:if test="${o.status=='finished'||o.status=='canceled'}">
+                                    <a href="<%=basePath%>/user/updateOrderStatus?orderId=${o.id}&orderStatus=finished">
+                                        <button class="orderListItemConfirm">关闭</button>
                                     </a>
                                 </c:if>
                             </td>
@@ -108,12 +110,13 @@
         </c:forEach>
     </div>
 </div>
-
+<c:if test="${empty orders}">
+    <br/>
+    <br/>
+    <h1><center>暂无订单</center><h1>
+</c:if>
 
 <script>
-    // var deleteOrder = false;
-    // var deleteOrderid = 0;
-
     $(function(){
         $("a[orderStatus]").click(function(){
             var orderStatus = $(this).attr("orderStatus");
@@ -126,6 +129,8 @@
                     orderStatus = 'canceled'
                     $("table[orderStatus="+orderStatus+"]").show();
                     orderStatus = 'refused'
+                    $("table[orderStatus="+orderStatus+"]").show();
+                }else{
                     $("table[orderStatus="+orderStatus+"]").show();
                 }
 

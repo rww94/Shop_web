@@ -8,8 +8,11 @@
         <result column="fullname" property="fullname" jdbcType="VARCHAR" />
         <result column="message" property="message" jdbcType="VARCHAR" />
     </resultMap>
-<!--根据厂商id查询-->
+<!--根据厂商id查询登陆信息-->
 <select id="queryForLogin" resultType="com.shop.pojo.Firm"  resultMap="FirmResultMapper">
     select * from firm  where binary alive = 1 and name = #{name} and password = #{password}
+</select>
+<select id="getFirmList" resultMap="FirmResultMapper">
+    select * from firm where alive = 1
 </select>
 </mapper>

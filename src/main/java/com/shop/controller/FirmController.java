@@ -235,6 +235,7 @@ public class FirmController {
     * */
     @RequestMapping("getOrderList")
     public String getOrderList(Model model, Page page){
+
         PageHelper.offsetPage(page.getStart(),page.getCount());
         List<Order> orders = orderService.getList();
         // 得到订单总数
@@ -254,7 +255,8 @@ public class FirmController {
         if(null==orderId||null==orderStatus){
             return "redirect:getOrderList";
         }
-        orderService.updateStatus(orderId,orderStatus);
+        Date date = new Date();
+        orderService.updateStatus(orderId,orderStatus,date);
         return "redirect:getOrderList";
     }
 }

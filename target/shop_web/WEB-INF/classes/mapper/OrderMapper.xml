@@ -24,23 +24,25 @@
 </insert>
 <!--    根据订单id查询-->
 <select id="getById" parameterType="java.lang.Integer" resultMap="OrderResultMapper">
-    select * from order_ where id = #{id}
+    select * from order_ where alive = 1 and id = #{id}
 </select>
 <!--用户下单更新订单-->
 <update id="updateOrder"  parameterType="com.shop.pojo.Order">
-    update order_ set pay_date = #{pay_date}, confirm_date = #{confirm_date}, status = #{status}
+    update order_ set alive = 1, orderCode = #{orderCode}, uid = #{uid}, receiver = #{receiver}, address = #{address},
+    mobile = #{mobile}, user_message = #{user_message}, firm_message = #{firm_message}, create_date = #{create_date},
+    pay_date = #{pay_date}, confirm_date = #{confirm_date}, status = #{status}
     where id = #{id}
 </update>
 <!--    通过用户id得到所属订单-->
 <select id="getListByUid" parameterType="java.lang.Integer" resultMap="OrderResultMapper">
-    select * from order_ where uid = #{uid} and status != 'deleted'
+    select * from order_ where alive = 1 and uid = #{uid} and status != 'deleted'
 </select>
 <!--    得到所有订单-->
 <select id="getList" resultMap="OrderResultMapper">
-    select * from order_
+    select * from order_ where alive = 1
 </select>
 <update id="updateStatus" >
-    update order_ set status = #{status}
+    update order_ set status = #{status}, confirm_date = #{date}
     where id = #{id}
 </update>
 </mapper>

@@ -4,6 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.shop.pojo.Firm;
 import com.shop.pojo.User;
+import com.shop.service.FirmService;
 import com.shop.service.UserService;
 import com.shop.util.MD5Util;
 import com.shop.util.Page;
@@ -33,6 +34,8 @@ public class AdminController {
     AdminService adminService;
     @Autowired
     UserService userService;
+    @Autowired
+    FirmService firmService;
     /*
     * 跳转功能:管理员登陆跳转
     * */
@@ -91,14 +94,14 @@ public class AdminController {
     * */
     @RequestMapping("getFirmList")
     public String getFirmList(Model model, Page page){
-        // 取出数据前设置分页参数
-//        PageHelper.offsetPage(page.getStart(),page.getCount());
-//        List<User> users = userService.getUserList();
-//        // 获得用户总数
-//        int total = (int) new PageInfo<>(users).getTotal();
-//        page.setTotal(total);
-//        model.addAttribute("page",page);
-//        model.addAttribute("users",users);
+        //取出数据前设置分页参数
+        PageHelper.offsetPage(page.getStart(),page.getCount());
+        List<Firm> firms = firmService.getFirmList();
+        // 获得厂商总数
+        int total = (int) new PageInfo<>(firms).getTotal();
+        page.setTotal(total);
+        model.addAttribute("page",page);
+        model.addAttribute("firms",firms);
         return "admin/listFirm";
     }
     /*
@@ -112,6 +115,8 @@ public class AdminController {
         userService.deleteUser(id);
         return "redirect:/admin/getUserList";
     }
+//    @RequestMapping("firm_delete")
+//    public String
     /*
      * 跳转功能:跳转到添加用户界面
      * */

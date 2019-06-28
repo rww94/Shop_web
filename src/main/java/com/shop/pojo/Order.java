@@ -211,8 +211,8 @@ public class Order {
             case OrderService.waitConfirm:
                 desc="待确认";
                 break;
-            case OrderService.waitReceive:
-                desc="已发货";
+            case OrderService.confirmed:
+                desc="已确认";
                 break;
             case OrderService.finished:
                 desc="已完成";
@@ -223,8 +223,8 @@ public class Order {
             case OrderService.canceled:
                 desc="已取消";
                 break;
-            case OrderService.deleted:
-                desc="已刪除";
+            case OrderService.closed:
+                desc="已关闭";
                 break;
             default:
                 desc="异常";

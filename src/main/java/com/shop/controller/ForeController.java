@@ -144,27 +144,36 @@ public class ForeController {
         }
         List<OrderItem> orderItems = new ArrayList<>();
         float totalPrice = 0;
-        // 根据订单项id 查找订单
+        // 根据订单项id 查找订单项信息
         for (String s : oiid) {
             int id = Integer.parseInt(s);
             OrderItem orderItem = orderItemService.getById(id);
             totalPrice += orderItem.getPrice()*orderItem.getNumber();
             orderItems.add(orderItem);
         }
-        session.setAttribute("orderItems", orderItems);
+        /*
+        * 生成新订单
+        * */
+        Order order = new Order();
+        String orderCode = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()) + RandomUtils.nextInt(10000);
+        order.setOrderCode(orderCode);
+        //订单入库和为订单元素项设置oid
+        orderService.addOrder(order,orderItems);
         model.addAttribute("totalPrice", totalPrice);
+        model.addAttribute("order", order);
+        model.addAttribute("orderItems",orderItems);
         return "fore/buy";
     }
     /*
     * 创建订单
     * */
     @RequestMapping("forecreateOrder")
-    public String createOrder(Order order, HttpSession session) throws IOException {
-        if(null == order){
+    public String createOrder(Order order, Float totalPrice, HttpSession session){
+        if(null == order||null == totalPrice){
             return "redirect:/fore/foreHome";
         }
         //得到订单元素信息
-        List<OrderItem> orderItems = (List<OrderItem>) session.getAttribute("orderItems");
+        List<OrderItem> orderItems = orderItemService.getListByOid(order.getId());
         //判断库存是否充足
         for(OrderItem orderItem:orderItems){
             Product product = productService.getById(orderItem.getPid());
@@ -176,20 +185,13 @@ public class ForeController {
                 productService.updateProduct(product);
             }
         }
-        //得到用户信息
         User user = (User) session.getAttribute("user");
-        //生成订单编号（日期加随机数）
-        String orderCode = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()) + RandomUtils.nextInt(10000);
-        order.setOrderCode(orderCode);
-        //生成订单创建日期
         order.setCreate_date(new Date());
-        //设置订单用户id
         order.setUid(user.getId());
         //设置订单状态（等待支付）
         order.setStatus(OrderService.waitPay);
         //得到订单总价同时添加订单入数据库
-        float totalPrice = orderService.addOrder(order,orderItems);
-//        session.setAttribute("order"+user.getId(),order.getId());
+        orderService.updateOrder(order);
         return "redirect:forealipay?orderId="+order.getId() + "&totalPrice=" + totalPrice;
     }
     /*

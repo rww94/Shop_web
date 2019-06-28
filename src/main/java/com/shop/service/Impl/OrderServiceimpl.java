@@ -10,6 +10,7 @@ import com.shop.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -80,7 +81,7 @@ public class OrderServiceimpl implements OrderService {
     }
 
     @Override
-    public void updateStatus(Integer orderId, String orderStatus) {
-        orderMapper.updateStatus(orderId,orderStatus);
+    public void updateStatus(Integer orderId, String orderStatus, Date date) {
+        orderMapper.updateStatus(orderId,orderStatus,date);
     }
 }

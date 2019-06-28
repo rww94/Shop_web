@@ -3,6 +3,7 @@ package com.shop.service;
 import com.shop.pojo.Order;
 import com.shop.pojo.OrderItem;
 
+import java.util.Date;
 import java.util.List;
 
 public interface OrderService {
@@ -41,15 +42,15 @@ public interface OrderService {
     /*
     * 厂商更改订单状态
     * */
-    void updateStatus(Integer orderId, String orderStatus);
+    void updateStatus(Integer orderId, String orderStatus, Date date);
     /*
     * 订单状态
     * */
     public static final String waitPay = "waitPay";          //等待支付
     public static final String canceled = "canceled";             //已取消
     public static final String waitConfirm = "waitConfirm";      //等待确认
-    public static final String waitReceive = "waitReceive";            //待收货
+    public static final String confirmed = "confirmed";            //已确认
     public static final String refused = "refused";             //已拒绝
     public static final String finished = "finished";             //已完成
-    public static final String deleted = "deleted";              //已删除
+    public static final String closed = "closed";              //已关闭
 }

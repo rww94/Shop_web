@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 import java.util.List;
 /*
 * 用户控制器
@@ -215,7 +216,8 @@ public class UserController {
         if(null==orderId||null==orderStatus){
             return "redirect:userOrder";
         }
-        orderService.updateStatus(orderId,orderStatus);
+        Date date = new Date();
+        orderService.updateStatus(orderId,orderStatus,date);
         return "redirect:userOrder";
     }
     /*
@@ -231,6 +233,9 @@ public class UserController {
         model.addAttribute("shopCarts",shopCarts);
         return "user/shopCart";
     }
+    /*
+    * 删除购物车信息项
+    * */
     @RequestMapping("shopcart_delete")
     public String shopcart_delete(Integer id) {
         shopCartService.deleteById(id);

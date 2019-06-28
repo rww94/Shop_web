@@ -35,7 +35,7 @@
                     <td align="center"><fmt:formatDate value="${o.create_date}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                     <td style="width:200px;"align="center">
                         <c:if test="${o.status=='waitConfirm'}">
-                            <a id="confirmbtn" href="updateOrderStatus?orderId=${o.id}&orderStatus=waitReceive">
+                            <a id="confirmbtn" href="updateOrderStatus?orderId=${o.id}&orderStatus=confirmed">
                                 <button style="width: 60px" class="orderPageCheckOrderItems btn btn-primary btn-xs" >确认</button>
                             </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <a href="updateOrderStatus?orderId=${o.id}&orderStatus=refused">

@@ -33,6 +33,11 @@
                         <td>用户留言 </td>
                         <td><textarea name="message"></textarea></td>
                     </tr>
+                    <input type="hidden" name="id" value="${order.id}"/>
+                    <input type="hidden" name="orderCode" value="${order.orderCode}"/>
+                    <input type="hidden" name="uid" value="${order.uid}"/>
+                    <input type="hidden" name="totalPrice" value="${totalPrice}"/>
+
                 </table>
 
             </div>
@@ -73,7 +78,7 @@
                             <span class="orderItemProductNumber">${oi.number}</span>
                         </td>
                         <td><span class="orderItemUnitSum">
-						￥<fmt:formatNumber type="number" value="${oi.number*oi.price}" minFractionDigits="2"/>
+						￥<fmt:formatNumber type="number" value="${totalPrice}" minFractionDigits="2"/>
 						</span></td>
                     </tr>
                 </c:forEach>
