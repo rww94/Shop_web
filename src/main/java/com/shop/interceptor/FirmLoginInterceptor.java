@@ -11,15 +11,10 @@ import java.io.IOException;
 import java.util.Arrays;
 
 public class FirmLoginInterceptor extends HandlerInterceptorAdapter {
-    /**
+    /*
      * 在业务处理器处理请求之前调用
      * 如果返回false 退出拦截器 不执行Controller 里的方法
      * 如果返回true 执行被拦截的Controller 的方法
-     * @param request
-     * @param response
-     * @param handler
-     * @return
-     * @throws IOException
      */
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws IOException {
         HttpSession session = request.getSession();

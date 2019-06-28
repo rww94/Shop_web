@@ -25,9 +25,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
     <span class="pull-right">
                 <a href="<%=basePath %>/user/userOrder">我的订单</a>
-                <a href="forecart">
+                <a href="<%=basePath %>/user/shopCart">
                 <span style="color:#C40000;margin:0px" class=" glyphicon glyphicon-shopping-cart redColor"></span>
-                购物车<strong>${cartTotalItemNumber}</strong>件</a>
+                购物车</a>
         </span>
 </nav>
 
@@ -35,19 +35,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="searchDiv">
         <input name="keyword" type="text">
         <button  type="submit" class="searchButton">搜索</button>
-        <div class="searchBelow">
-            <c:forEach items="${categories}" var="c" varStatus="st">
-                <c:if test="${st.count>=1 and st.count<=4}">
-                            <span>
-                                <a href="forecategory?cid=${c.id}">
-                                        ${c.name}
-                                </a>
-                                <c:if test="${st.count!=4}">
-                                    <span>|</span>
-                                </c:if>
-                            </span>
-                </c:if>
-            </c:forEach>
-        </div>
+<%--        <div class="searchBelow">--%>
+<%--            <c:forEach items="${categories}" var="c" varStatus="st">--%>
+<%--                <c:if test="${st.count>=1 and st.count<=4}">--%>
+<%--                            <span>--%>
+<%--                                <a href="forecategory?cid=${c.id}">--%>
+<%--                                        ${c.name}--%>
+<%--                                </a>--%>
+<%--                                <c:if test="${st.count!=4}">--%>
+<%--                                    <span>|</span>--%>
+<%--                                </c:if>--%>
+<%--                            </span>--%>
+<%--                </c:if>--%>
+<%--            </c:forEach>--%>
+<%--        </div>--%>
     </div>
 </form>

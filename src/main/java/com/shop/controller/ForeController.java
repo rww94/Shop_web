@@ -10,12 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -37,6 +34,8 @@ public class ForeController {
     OrderItemService orderItemService;
     @Autowired
     OrderService orderService;
+    @Autowired
+    ShopCartService shopCartService;
     /*
     * 首页展示
     * */
@@ -102,7 +101,7 @@ public class ForeController {
         page.setParam("&keyword="+keyword);
         PageHelper.offsetPage(page.getStart(),page.getCount());
         List<Product> products = productService.searchProducts(keyword);
-
+        System.out.println("Size="+products.size());
         int total = (int) new PageInfo<>(products).getTotal();
         page.setTotal(total);
 
@@ -114,11 +113,15 @@ public class ForeController {
     * 订单第一步，生成订单元素项
     * */
     @RequestMapping("forebuyFirst")
-    public String buyFirst(Integer pid, Integer num, HttpSession session){
+    public String forebuyFirst(Integer pid, Integer num, HttpSession session){
         if(null == pid || null == num){
             return "redirect:/fore/foreHome";
         }
         Product product = productService.getById(pid);
+        //判断库存是否充足
+        if(product.getStock_number()<num){
+            return "noEnough";
+        }
         // 新增订单项ID
         int oiid = 0;
         User user = (User) session.getAttribute("user");
@@ -162,12 +165,11 @@ public class ForeController {
         }
         //得到订单元素信息
         List<OrderItem> orderItems = (List<OrderItem>) session.getAttribute("orderItems");
-        System.out.println(orderItems.size());
         //判断库存是否充足
         for(OrderItem orderItem:orderItems){
             Product product = productService.getById(orderItem.getPid());
             if(product.getStock_number()<orderItem.getNumber()){
-                return "fail";
+                return "noEnough";
             }else{
                 //更新商品库存
                 product.setStock_number(product.getStock_number()-orderItem.getNumber());
@@ -185,9 +187,9 @@ public class ForeController {
         order.setUid(user.getId());
         //设置订单状态（等待支付）
         order.setStatus(OrderService.waitPay);
-        //得到订单总价
+        //得到订单总价同时添加订单入数据库
         float totalPrice = orderService.addOrder(order,orderItems);
-        session.setAttribute("order"+user.getId(),order.getId());
+//        session.setAttribute("order"+user.getId(),order.getId());
         return "redirect:forealipay?orderId="+order.getId() + "&totalPrice=" + totalPrice;
     }
     /*
@@ -201,7 +203,10 @@ public class ForeController {
     * 点击确认支付,服务端跳转到支付页面
     * */
     @RequestMapping("forepay")
-    public String pay(int orderId, float totalPrice, Model model){
+    public String pay(Integer orderId, Model model){
+        if(null == orderId){
+            return "redirect:/fore/foreHome";
+        }
         Order order = orderService.getById(orderId);
         if (null == order){
             return "fail";
@@ -211,5 +216,73 @@ public class ForeController {
         orderService.updateOrder(order);
         model.addAttribute("order",order);
         return "fore/pay";
+    }
+    /*
+    * 添加到购物车
+    * */
+    @RequestMapping("foreaddCart")
+    @ResponseBody
+    public String foreaddCart(Integer pid,Integer number, HttpSession session){
+        if(null==pid||null==number){
+            return "redirect:/fore/foreHome";
+        }
+        User user = (User) session.getAttribute("user");
+        // 标识购物车是否已经存在该产品
+        boolean exist = false;
+        // 查询当前用户购物车信息项, 存在该产品则加对应数量
+        List<ShopCart> shopCarts = shopCartService.getListByUid(user.getId());
+        for(ShopCart shopCart:shopCarts){
+            if(shopCart.getPid().equals(pid)){
+                shopCart.setNumber(shopCart.getNumber()+number);
+                shopCartService.update(shopCart);
+                exist = true;
+                break;
+            }
+        }
+        // 购物车不存在该产品，则生成新的购物车信息项
+        if(!exist){
+            ShopCart shopCart = new ShopCart();
+            shopCart.setUid(user.getId());
+            shopCart.setNumber(number);
+            shopCart.setPid(pid);
+            shopCartService.add(shopCart);
+        }
+        return "success";
+    }
+    /*
+    * 从购物车进行购买
+    * */
+    @RequestMapping("foreCartbuy")
+    public String foreCartbuy(Model model, String[] oiid, HttpSession session){
+        if(null==oiid){
+            return "redirect:/fore/foreHome";
+        }
+        User user = (User) session.getAttribute("user");
+        StringBuffer oid = new StringBuffer();
+        //循环从购物车下单的商品
+        for (String s : oiid) {
+            Integer id = Integer.parseInt(s);
+            ShopCart shopCart = shopCartService.getById(id);
+            //判断库存是否充足
+            Product product = productService.getById(shopCart.getPid());
+            if(product.getStock_number()<shopCart.getNumber()){
+                return "noEnough";
+            }
+            //将购物车项转化为订单元素项
+            OrderItem orderItem = new OrderItem();
+            orderItem.setUid(user.getId());
+            orderItem.setNumber(shopCart.getNumber());
+            orderItem.setPid(shopCart.getPid());
+            orderItem.setPrice(shopCart.getProduct().getNow_price());
+            //插入新的订单元素项
+            orderItemService.add(orderItem);
+            //构造订单请求路径
+            oid.append("&oiid="+orderItem.getId());
+            //从购物车删除
+            shopCartService.deleteById(id);
+        }
+        //截去路径中的第一个&符号
+        String res = oid.substring(1);
+        return "redirect:forebuy?"+res;
     }
 }

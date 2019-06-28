@@ -18,7 +18,9 @@ import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
+/*
+* 厂商控制器
+* */
 @Controller
 @RequestMapping("firm")
 public class FirmController {
@@ -192,7 +194,7 @@ public class FirmController {
     * 添加商品
     * */
     @RequestMapping("product_add")
-    public String addProduct(Product product){
+    public String product_add(Product product){
         if (null == product){
             return "fail";
         }
@@ -200,6 +202,7 @@ public class FirmController {
         productService.addProduct(product);
         return "redirect:/firm/product_list?cid="+product.getCid();
     }
+
     @RequestMapping("product_delete")
     public String deleteProduct(Integer pid){
         if (null == pid){
@@ -243,8 +246,14 @@ public class FirmController {
         model.addAttribute("orders",orders);
         return "firm/listOrder";
     }
-    @RequestMapping("confirmOrder")
-    public String confirmOrder(Integer orderId,String orderStatus){
+    @RequestMapping("updateOrderStatus")
+    /*
+     * 厂商更新订单状态（确认发货和拒绝）
+     * */
+    public String updateOrderStatus(Integer orderId,String orderStatus){
+        if(null==orderId||null==orderStatus){
+            return "redirect:getOrderList";
+        }
         orderService.updateStatus(orderId,orderStatus);
         return "redirect:getOrderList";
     }

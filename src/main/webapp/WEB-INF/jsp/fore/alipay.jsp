@@ -15,8 +15,6 @@
 
     <div>
         <button class="confirmPay">确认支付</button>
-<%--        <a href="forepay?orderId=${param.orderId}&totalPrice=${param.totalPrice}"><button class="confirmPay">确认支付</button></a>--%>
-
     </div>
 
 </div>

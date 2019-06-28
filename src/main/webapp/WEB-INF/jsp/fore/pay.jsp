@@ -14,12 +14,6 @@
 			￥<fmt:formatNumber type="number" value="${param.totalPrice}" minFractionDigits="2"/>
             </li>
         </ul>
-
-<%--        <div class="paedCheckLinkDiv">--%>
-<%--            您可以--%>
-<%--            <a class="payedCheckLink" href="forebought">查看交易详情 </a>--%>
-<%--        </div>--%>
-
     </div>
     <div class="payedSeperateLine">
     </div>

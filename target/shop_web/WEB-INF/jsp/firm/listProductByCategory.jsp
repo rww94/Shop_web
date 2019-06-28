@@ -39,7 +39,7 @@
                     <td>${p.now_price}</td>
                     <td>${p.stock_number}</td>
                     <td><a href="product_edit?id=${p.id}"><span>编辑</span></a></td>
-                    <td><a deleteLink="true" href="product_delete?id=${p.id}"><span>删除</span></a></td>
+                    <td><a deleteLink="true" href="product_delete?pid=${p.id}"><span>删除</span></a></td>
                 </tr>
             </c:forEach>
             </tbody>
@@ -75,12 +75,22 @@
                         <td><input id="stock_number"  value="99" name="stock_number" type="text"
                                    class="form-control"></td>
                     </tr>
+                    <tr>
+                        <td>详细信息</td>
+                        <td><input id="message" name="message" type="text"
+                                   class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td>图片上传</td>
+                        <td><input type="file" name="file"></td>
+                    </tr>
                     <tr class="submitTR">
                         <td colspan="2" align="center">
                             <input type="hidden" name="cid" value="${c.id}">
                             <button type="submit" class="btn btn-success">提 交</button>
                         </td>
                     </tr>
+
                 </table>
             </form>
         </div>

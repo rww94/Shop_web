@@ -12,22 +12,6 @@
 
 <link rel="stylesheet" type="text/css" href="../css/back/style.css">
 
-<script>
-    $(function(){
-        $("#addForm").submit(function(){
-            if(!checkEmpty("name","分类名称"))
-                return false;
-            var msg = "确认添加分类吗?\n请确认！";
-            if (confirm(msg)==true){
-                return true;
-            }else{
-                return false;
-            }
-            return true;
-        });
-    });
-</script>
-
 <div class="panel panel-warning addDiv" style="margin-top: 100px; margin-left: 50px; margin-right: 50px">
     <div class="panel-heading">新增分类</div>
     <div class="panel-body">
@@ -52,3 +36,19 @@
         </form>
     </div>
 </div>
+
+<script>
+    $(function(){
+        $("#addForm").submit(function(){
+            if(!checkEmpty("name","分类名称"))
+                return false;
+            var msg = "确认添加分类吗?\n请确认！";
+            if (confirm(msg)==true){
+                return true;
+            }else{
+                return false;
+            }
+            return true;
+        });
+    });
+</script>

@@ -20,10 +20,6 @@
 
                         <td><textarea name="address" placeholder="请填写详细收货地址"></textarea></td>
                     </tr>
-<%--                    <tr>--%>
-<%--                        <td>邮政编码</td>--%>
-<%--                        <td><input  name="post"  type="text"></td>--%>
-<%--                    </tr>--%>
                     <tr>
                         <td>收货人姓名<span class="redStar">*</span></td>
                         <td><input  name="receiver" type="text"></td>
@@ -52,7 +48,6 @@
                     <th>单价</th>
                     <th>数量</th>
                     <th>小计</th>
-                    <th>配送方式</th>
                 </tr>
                 <tr class="rowborder">
                     <td  colspan="2" ></td>
@@ -80,22 +75,12 @@
                         <td><span class="orderItemUnitSum">
 						￥<fmt:formatNumber type="number" value="${oi.number*oi.price}" minFractionDigits="2"/>
 						</span></td>
-                        <c:if test="${st.count==1}">
-                            <td rowspan="5"  class="orderItemLastTD">
-                                <label class="orderItemDeliveryLabel">
-                                    普通配送
-                                </label>
-                            </td>
-                        </c:if>
                     </tr>
                 </c:forEach>
 
                 </tbody>
 
             </table>
-            <div class="orderItemSumDiv">
-                <span class="pull-right">合计(含运费): ￥<fmt:formatNumber type="number" value="${totalPrice}" minFractionDigits="2"/></span>
-            </div>
 
         </div>
 

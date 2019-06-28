@@ -46,8 +46,10 @@ public interface OrderService {
     * 订单状态
     * */
     public static final String waitPay = "waitPay";          //等待支付
+    public static final String canceled = "canceled";             //已取消
     public static final String waitConfirm = "waitConfirm";      //等待确认
-    public static final String finish = "finish";             //已确认
-    public static final String refuse = "refuse";             //已拒绝
-    public static final String delete = "delete";              //已删除
+    public static final String waitReceive = "waitReceive";            //待收货
+    public static final String refused = "refused";             //已拒绝
+    public static final String finished = "finished";             //已完成
+    public static final String deleted = "deleted";              //已删除
 }

@@ -1,8 +1,10 @@
 package com.shop.controller;
 
 import com.shop.pojo.Order;
+import com.shop.pojo.ShopCart;
 import com.shop.service.OrderItemService;
 import com.shop.service.OrderService;
+import com.shop.service.ShopCartService;
 import com.shop.util.MD5Util;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +20,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
-
+/*
+* 用户控制器
+* */
 @Controller
 @RequestMapping("user")
 public class UserController {
@@ -28,6 +32,8 @@ public class UserController {
     OrderService orderService;
     @Autowired
     OrderItemService orderItemService;
+    @Autowired
+    ShopCartService shopCartService;
     /*
      * 跳转功能：到用户登录界面
      * */
@@ -161,8 +167,10 @@ public class UserController {
     * */
     @RequestMapping("editUser")
     public String editUser(User user, HttpSession session){
+        System.out.println("用户邮箱："+user.getEmail());
         //编辑用户信息
         userService.editUser(user);
+
         //重新保存用户Session信息
         user =  userService.getById(user.getId());
         session.setAttribute("user",user);
@@ -197,6 +205,36 @@ public class UserController {
             orderItemService.fillOrder(orders);
             model.addAttribute("orders",orders);
         }
-        return "fore/userOrder";
+        return "user/userOrder";
     }
+    /*
+    * 用户更新订单状态（确认收货和取消）
+    * */
+    @RequestMapping("updateOrderStatus")
+    public String updateOrderStatus(Integer orderId,String orderStatus){
+        if(null==orderId||null==orderStatus){
+            return "redirect:userOrder";
+        }
+        orderService.updateStatus(orderId,orderStatus);
+        return "redirect:userOrder";
+    }
+    /*
+    * 得到用户购物车信息项列表
+    * */
+    @RequestMapping("shopCart")
+    public String shopCart(Model model, HttpSession session) {
+        User user = (User) session.getAttribute("user");
+        if (null == user) {
+            return "fail";
+        }
+        List<ShopCart> shopCarts = shopCartService.getListByUid(user.getId());
+        model.addAttribute("shopCarts",shopCarts);
+        return "user/shopCart";
+    }
+    @RequestMapping("shopcart_delete")
+    public String shopcart_delete(Integer id) {
+        shopCartService.deleteById(id);
+        return "redirect:shopCart";
+    }
+
 }

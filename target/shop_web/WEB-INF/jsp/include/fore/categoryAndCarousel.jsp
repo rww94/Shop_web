@@ -1,6 +1,39 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" isELIgnored="false"%>
+
+<div class="categoryWithCarousel">
+
+    <div class="headbar show1">
+        <div class="head" onclick="showcategoryMenu()">
+
+            <span style="margin-left:50px" class="glyphicon glyphicon-th-list"></span>
+            <span style="margin-left:50px" >商品分类</span>
+
+        </div>
+        <div class="rightMenu">
+            <c:forEach items="${categories}" var="c" varStatus="st">
+                <c:if test="${st.count<=5}">
+				<span>
+				<a href="forecategory?cid=${c.id}">
+                        ${c.name}
+                </a></span>
+                </c:if>
+            </c:forEach>
+        </div>
+    </div>
+    <div id = "categoryMenu" class="categoryMenu" style="margin-top: 37px;display: none">
+        <c:forEach items="${categories}" var="c">
+            <div cid="${c.id}" class="eachCategory">
+                <span class="glyphicon glyphicon-link"></span>
+                <a href="forecategory?cid=${c.id}">
+                        ${c.name}
+                </a>
+            </div>
+        </c:forEach>
+    </div>
+    <div class="carouselBackgroundDiv">
+    </div>
+</div>
 
 <script type="text/javascript">
     function showcategoryMenu() {
@@ -55,41 +88,3 @@
 
     });
 </script>
-<div class="categoryWithCarousel">
-
-    <div class="headbar show1">
-        <div class="head" onclick="showcategoryMenu()">
-
-            <span style="margin-left:50px" class="glyphicon glyphicon-th-list"></span>
-            <span style="margin-left:50px" >商品分类</span>
-
-        </div>
-
-        <div class="rightMenu">
-            <c:forEach items="${categories}" var="c" varStatus="st">
-                <c:if test="${st.count<=5}">
-				<span>
-				<a href="forecategory?cid=${c.id}">
-                        ${c.name}
-                </a></span>
-                </c:if>
-            </c:forEach>
-        </div>
-
-    </div>
-
-    <div id = "categoryMenu" class="categoryMenu" style="margin-top: 37px;display: none">
-        <c:forEach items="${categories}" var="c">
-            <div cid="${c.id}" class="eachCategory">
-                <span class="glyphicon glyphicon-link"></span>
-                <a href="forecategory?cid=${c.id}">
-                        ${c.name}
-                </a>
-            </div>
-        </c:forEach>
-    </div>
-    <div class="carouselBackgroundDiv">
-    </div>
-
-
-</div>

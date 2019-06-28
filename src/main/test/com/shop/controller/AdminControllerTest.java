@@ -14,7 +14,7 @@ import java.io.IOException;
 
 import static org.junit.Assert.*;
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration({"classpath*:/applicationContext.xml","classpath*:/springMVC.xml"})
+@ContextConfiguration({"classpath:springMVC.xml"})
 public class AdminControllerTest {
 
     private MockHttpServletRequest request;
@@ -40,6 +40,7 @@ public class AdminControllerTest {
 
     @Test
     public void logout() {
+        System.out.println("sdsds");
     }
 
     @Test

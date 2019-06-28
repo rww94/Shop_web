@@ -18,18 +18,18 @@
                     <a class="productLink" href="foreproduct?pid=${p.id}">
                             ${fn:substring(p.name, 0, 50)}
                     </a>
-                    <a class="tmallLink" href="foreproduct?pid=${p.id}">商城专卖</a>
+<%--                    <a class="tmallLink" href="foreproduct?pid=${p.id}">商城专卖</a>--%>
                 </div>
             </c:forEach>
             <c:if test="${empty products}">
-              <div class="noMatch">没有满足条件的产品<div>
+              <div class="noMatch">没有满足条件的产品</div>
              </c:if>
                 <div style="clear:both"></div>
+        </div>
              <c:if test="${!empty products}">
                  <div class="pageDiv">
                      <%@include file="../include/admin/adminPage.jsp" %>
                  </div>
               </c:if>
      </div>
-
  </div>

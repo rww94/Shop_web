@@ -3,6 +3,104 @@
 <%@include file="../include/admin/adminHeader.jsp"%>
 <%@include file="../include/fore/top.jsp"%>
 
+<title>购物车</title>
+<div class="cartDiv">
+    <div class="cartTitle pull-right">
+        <span>已选商品</span>
+        <span class="cartTitlePrice">￥0.00</span>
+        <button class="createOrderButton" disabled="disabled">结 算</button>
+    </div>
+
+    <div class="cartProductList">
+        <table class="cartProductTable">
+            <thead>
+            <tr>
+                <th class="selectAndImage">
+                    <img selectit="false" class="selectAllItem" src="/images/site/cartNotSelected.png">
+                    全选
+                </th>
+                <th>商品信息</th>
+                <th>单价</th>
+                <th>数量</th>
+                <th width="120px">金额</th>
+                <th class="operation">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${orderItems}" var="oi">
+                <tr oiid="${oi.id}" class="cartProductItemTR">
+                    <td>
+                        <img selectit="false" oiid="${oi.id}" class="cartProductItemIfSelected" src="/images/site/cartNotSelected.png">
+                        <a style="display:none" href="#nowhere"><img src="/images/site/cartSelected.png"></a>
+                        <img class="cartProductImg"  src="/images/productSingle_middle/${oi.product.showPicture.id}.jpg">
+                    </td>
+                    <td>
+                        <div class="cartProductLinkOutDiv">
+                            <a href="foreproduct?pid=${oi.product.id}" class="cartProductLink">${oi.product.name}</a>
+                        </div>
+
+                    </td>
+                    <td>
+                        <span class="cartProductItemOringalPrice">￥${oi.product.original_price}</span>
+                        <span  class="cartProductItemPromotionPrice">￥${oi.product.promote_price}</span>
+
+                    </td>
+                    <td>
+                        <div class="cartProductChangeNumberDiv">
+                            <span class="hidden orderItemStock " pid="${oi.product.id}">${oi.product.stock}</span>
+                            <span class="hidden orderItemPromotePrice " pid="${oi.product.id}">${oi.product.promote_price}</span>
+                                <a  pid="${oi.product.id}" class="numberMinus" href="#nowhere" id="numberMinus">-</a>
+                            <input pid="${oi.product.id}" oiid="${oi.id}" class="orderItemNumberSetting" autocomplete="off" value="${oi.number}">
+                                <a  stock="${oi.product.stock}" pid="${oi.product.id}" class="numberPlus" href="#nowhere" id="numberPlus">+</a>
+                        </div>
+                    </td>
+
+                    <td >
+							<span class="cartProductItemSmallSumPrice" oiid="${oi.id}" pid="${oi.product.id}" >
+							￥<fmt:formatNumber type="number" value="${oi.product.promote_price*oi.number}" minFractionDigits="2"/>
+							</span>
+                    </td>
+
+                    <td>
+                        <a class="deleteOrderItem" oiid="${oi.id}"  href="#nowhere">删除</a>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+
+        </table>
+    </div>
+
+    <div class="cartFoot">
+        <img selectit="false" class="selectAllItem" src="/images/site/cartNotSelected.png">
+        <span>全选</span>
+
+        <div class="pull-right">
+            <span>已选商品 <span class="cartSumNumber" >0</span> 件</span>
+
+            <span>合计 (不含运费): </span>
+            <span class="cartSumPrice" >￥0.00</span>
+            <button class="createOrderButton" disabled="disabled" >结  算</button>
+        </div>
+    </div>
+
+    <div class="modal" id="deleteConfirmModal" tabindex="-1" role="dialog" >
+        <div class="modal-dialog deleteConfirmModalDiv">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">确认删除？</h4>
+                </div>
+                <div class="modal-footer">
+                    <button data-dismiss="modal" class="btn btn-default" type="button">关闭</button>
+                    <button class="btn btn-primary deleteConfirmButton" id="submit" type="button">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
 <script>
     var deleteOrderItem = false;
     var deleteOrderItemid = 0;
@@ -228,103 +326,3 @@
     })
 
 </script>
-
-<title>购物车</title>
-<div class="cartDiv">
-    <div class="cartTitle pull-right">
-        <span>已选商品</span>
-        <span class="cartTitlePrice">￥0.00</span>
-        <button class="createOrderButton" disabled="disabled">结 算</button>
-    </div>
-
-    <div class="cartProductList">
-        <table class="cartProductTable">
-            <thead>
-            <tr>
-                <th class="selectAndImage">
-                    <img selectit="false" class="selectAllItem" src="/images/site/cartNotSelected.png">
-                    全选
-                </th>
-                <th>商品信息</th>
-                <th>单价</th>
-                <th>数量</th>
-                <th width="120px">金额</th>
-                <th class="operation">操作</th>
-            </tr>
-            </thead>
-            <tbody>
-            <c:forEach items="${orderItems}" var="oi">
-                <tr oiid="${oi.id}" class="cartProductItemTR">
-                    <td>
-                        <img selectit="false" oiid="${oi.id}" class="cartProductItemIfSelected" src="/images/site/cartNotSelected.png">
-                        <a style="display:none" href="#nowhere"><img src="/images/site/cartSelected.png"></a>
-                        <img class="cartProductImg"  src="/images/productSingle_middle/${oi.product.showPicture.id}.jpg">
-                    </td>
-                    <td>
-                        <div class="cartProductLinkOutDiv">
-                            <a href="foreproduct?pid=${oi.product.id}" class="cartProductLink">${oi.product.name}</a>
-                        </div>
-
-                    </td>
-                    <td>
-                        <span class="cartProductItemOringalPrice">￥${oi.product.original_price}</span>
-                        <span  class="cartProductItemPromotionPrice">￥${oi.product.promote_price}</span>
-
-                    </td>
-                    <td>
-                        <div class="cartProductChangeNumberDiv">
-                            <span class="hidden orderItemStock " pid="${oi.product.id}">${oi.product.stock}</span>
-                            <span class="hidden orderItemPromotePrice " pid="${oi.product.id}">${oi.product.promote_price}</span>
-                                <a  pid="${oi.product.id}" class="numberMinus" href="#nowhere" id="numberMinus">-</a>
-                            <input pid="${oi.product.id}" oiid="${oi.id}" class="orderItemNumberSetting" autocomplete="off" value="${oi.number}">
-                                <a  stock="${oi.product.stock}" pid="${oi.product.id}" class="numberPlus" href="#nowhere" id="numberPlus">+</a>
-                        </div>
-                    </td>
-
-                    <td >
-							<span class="cartProductItemSmallSumPrice" oiid="${oi.id}" pid="${oi.product.id}" >
-							￥<fmt:formatNumber type="number" value="${oi.product.promote_price*oi.number}" minFractionDigits="2"/>
-							</span>
-                    </td>
-
-                    <td>
-                        <a class="deleteOrderItem" oiid="${oi.id}"  href="#nowhere">删除</a>
-                    </td>
-                </tr>
-            </c:forEach>
-            </tbody>
-
-        </table>
-    </div>
-
-    <div class="cartFoot">
-        <img selectit="false" class="selectAllItem" src="/images/site/cartNotSelected.png">
-        <span>全选</span>
-
-        <div class="pull-right">
-            <span>已选商品 <span class="cartSumNumber" >0</span> 件</span>
-
-            <span>合计 (不含运费): </span>
-            <span class="cartSumPrice" >￥0.00</span>
-            <button class="createOrderButton" disabled="disabled" >结  算</button>
-        </div>
-    </div>
-
-    <div class="modal" id="deleteConfirmModal" tabindex="-1" role="dialog" >
-        <div class="modal-dialog deleteConfirmModalDiv">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                    <h4 class="modal-title">确认删除？</h4>
-                </div>
-                <div class="modal-footer">
-                    <button data-dismiss="modal" class="btn btn-default" type="button">关闭</button>
-                    <button class="btn btn-primary deleteConfirmButton" id="submit" type="button">确认</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-

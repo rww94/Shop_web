@@ -33,7 +33,7 @@
 </update>
 <!--    通过用户id得到所属订单-->
 <select id="getListByUid" parameterType="java.lang.Integer" resultMap="OrderResultMapper">
-    select * from order_ where uid = #{uid}
+    select * from order_ where uid = #{uid} and status != 'deleted'
 </select>
 <!--    得到所有订单-->
 <select id="getList" resultMap="OrderResultMapper">

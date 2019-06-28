@@ -7,7 +7,6 @@
 
 <% String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path;
-    Firm firm = (Firm)session.getAttribute("firm");
 %>
 
 <link rel="stylesheet" type="text/css" href="../css/back/style.css">

@@ -199,24 +199,32 @@ public class Order {
     public void setUser(User user) {
         this.user = user;
     }
+    /*
+    * 订单状态中英文转化
+    * */
     public String statusChange(){
         String desc = null;
         switch (status){
             case OrderService.waitPay:
                 desc="待付款";
                 break;
-
             case OrderService.waitConfirm:
                 desc="待确认";
                 break;
-            case OrderService.finish:
-                desc="已确认";
+            case OrderService.waitReceive:
+                desc="已发货";
                 break;
-            case OrderService.refuse:
-                desc="以拒绝";
+            case OrderService.finished:
+                desc="已完成";
                 break;
-            case OrderService.delete:
-                desc="刪除";
+            case OrderService.refused:
+                desc="已拒绝";
+                break;
+            case OrderService.canceled:
+                desc="已取消";
+                break;
+            case OrderService.deleted:
+                desc="已刪除";
                 break;
             default:
                 desc="异常";

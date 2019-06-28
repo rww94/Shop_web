@@ -8,28 +8,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@include file="../include/admin/adminHeader.jsp"%>
 
-<script>
-    $(function(){
-        $("#editForm").submit(function(){
-            var msg = "确认修改信息吗?\n请确认！";
-            if (confirm(msg)==true){
-                return true;
-            }else{
-                return false;
-            }
-            return true;
-        });
-    });
-    $(document).ready(function(){
-        var key=$("#selectRefundReason").val();
-        if(key==null){
-            key="";
-        }
-        //根据值让option选中
-        $("#sex option[value='"+key+"']").attr("selected","selected");
-    });
-</script>
-
 <div class="workingArea">
     <br/>
     <br/>
@@ -57,11 +35,11 @@
                     </tr>
                     <tr>
                         <td>请输入地址:</td>
-                        <td><input  id="address" name="address" type="text" class="form-control" maxlength="15" value="${u.address}"/></td>
+                        <td><input  id="address" name="address" type="text" class="form-control" maxlength="100" value="${u.address}"/></td>
                     </tr>
                     <tr>
                         <td>请输入邮箱:</td>
-                        <td><input  id="email" name="email" type="text" class="form-control" maxlength="15"/></td>
+                        <td><input  id="email" name="email" type="text" class="form-control" maxlength="30" value="${u.email}"/></td>
                     </tr>
                     <tr><td>&nbsp;&nbsp;</td></tr>
                     <tr class="submitTR">
@@ -75,3 +53,25 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(function(){
+        $("#editForm").submit(function(){
+            var msg = "确认修改信息吗?\n请确认！";
+            if (confirm(msg)==true){
+                return true;
+            }else{
+                return false;
+            }
+            return true;
+        });
+    });
+    $(document).ready(function(){
+        var key=$("#selectRefundReason").val();
+        if(key==null){
+            key="";
+        }
+        //根据值让option选中
+        $("#sex option[value='"+key+"']").attr("selected","selected");
+    });
+</script>

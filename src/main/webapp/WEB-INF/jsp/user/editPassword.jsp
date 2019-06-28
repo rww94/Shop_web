@@ -8,31 +8,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@include file="../include/admin/adminHeader.jsp"%>
 
-<script>
-    $(function(){
-        $("#editForm").submit(function(){
-            var password1 = $("#password").val();
-            var password2 = $("#password-confirm").val();
-            if (password1.length == 0){
-                alert("密码不能为空!")
-                return false;
-            }
-            if (password1 != password2){
-                alert("两次密码不一致!")
-                return false;
-            }
-
-            var msg = "确认修改密码吗?\n请确认！";
-            if (confirm(msg)==true){
-                return true;
-            }else{
-                return false;
-            }
-            return true;
-        });
-    });
-</script>
-
 <div class="workingArea">
 
     <br/>
@@ -62,3 +37,28 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(function(){
+        $("#editForm").submit(function(){
+            var password1 = $("#password").val();
+            var password2 = $("#password-confirm").val();
+            if (password1.length == 0){
+                alert("密码不能为空!")
+                return false;
+            }
+            if (password1 != password2){
+                alert("两次密码不一致!")
+                return false;
+            }
+
+            var msg = "确认修改密码吗?\n请确认！";
+            if (confirm(msg)==true){
+                return true;
+            }else{
+                return false;
+            }
+            return true;
+        });
+    });
+</script>

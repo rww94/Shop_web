@@ -21,7 +21,7 @@
 </select>
     <!--根据关键词查找商品信息    -->
 <select id="searchBykeyword" parameterType="java.lang.String" resultType="com.shop.pojo.Product"  resultMap="ProductResultMapper">
-    SELECT product.* FROM product,category where alive = 1 and product.cid = category.id and
+    SELECT product.* FROM product,category where product.alive = 1 and product.cid = category.id and
     (product.name like"%"#{keyword}"%" or product.message like"%"#{keyword}"%" or category.name like"%"#{keyword}"%")
 </select>
 <!--    更新商品信息-->

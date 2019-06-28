@@ -20,7 +20,6 @@
             <c:forEach items="${products}" var="p" varStatus="stc">
                 <c:if test="${stc.count<=categorycount}">
                     <div class="productUnit" price="${p.now_price}">
-                        <div class="productUnitFrame">
                             <a href="foreproduct?pid=${p.id}">
                                 <img class="productImage" src="../images/productSingle/${p.image}.jpg">
                             </a>
@@ -28,14 +27,12 @@
                             <a class="productLink" href="foreproduct?pid=${p.id}">
                                     ${fn:substring(p.name, 0, 50)}
                             </a>
-                            <a  class="tmallLink" href="foreproduct?pid=${p.id}">商城专卖</a>
                         </div>
-                    </div>
                 </c:if>
             </c:forEach>
 
             <c:if test="${empty products}">
-            <div class="noMatch">该分类下暂时没有产品<div>
+            <div class="noMatch">该分类下暂时没有产品</div>
                 </c:if>
 
             <div style="clear:both"></div>

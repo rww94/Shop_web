@@ -14,14 +14,17 @@
        insert into orderitem (pid, uid, oid, price, number)
        values (#{pid}, #{uid}, #{oid}, #{price}, #{number})
 </insert>
+<!--    通过id查询订单元素项-->
 <select id="getById" resultMap="OrderItemResultMapper" parameterType="java.lang.Integer">
     select * from orderitem where alive = 1 and id = #{id,jdbcType=INTEGER}
 </select>
+<!--    通过id更新订单元素项-->
 <update id="updateById" parameterType="com.shop.pojo.OrderItem" >
     update orderitem set pid = #{pid},uid = #{uid},oid = #{oid},price = #{price}, number = #{number}
     where id = #{id}
 </update>
+<!--    通过订单id查询订单元素项-->
 <select id="getListByOid" parameterType="java.lang.Integer" resultMap="OrderItemResultMapper">
-    select * from orderitem where oid = #{oid}
+    select * from orderitem where alive = 1 and oid = #{oid}
 </select>
 </mapper>
