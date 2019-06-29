@@ -12,7 +12,21 @@
 <select id="queryForLogin" resultType="com.shop.pojo.Firm"  resultMap="FirmResultMapper">
     select * from firm  where binary alive = 1 and name = #{name} and password = #{password}
 </select>
+<!--    查询厂商列表-->
 <select id="getFirmList" resultMap="FirmResultMapper">
     select * from firm where alive = 1
+</select>
+<!--    删除厂商-->
+<update id="deleteFirm" parameterType="java.lang.Integer">
+    update firm set alive = 0 where id = #{id}
+</update>
+<!--    添加产商-->
+<insert id="addFirm" parameterType="com.shop.pojo.Firm">
+    insert into firm(name,password,fullname,message)
+    values(#{name},#{password},#{fullname},#{message})
+</insert>
+<!--    通过厂商名查找-->
+<select id="getByName" parameterType="java.lang.String" resultMap="FirmResultMapper">
+    select * from firm where alive = 1 and name = #{name}
 </select>
 </mapper>

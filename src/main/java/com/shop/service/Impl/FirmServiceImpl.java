@@ -21,4 +21,17 @@ public class FirmServiceImpl implements FirmService {
     public List<Firm> getFirmList() {
         return firmMapper.getFirmList();
     }
+    @Override
+    public void deleteFirm(Integer id) {
+        firmMapper.deleteFirm(id);
+    }
+    @Override
+    public void addFirm(Firm firm) {
+        firmMapper.addFirm(firm);
+    }
+
+    @Override
+    public List<Firm> getByName(String name) {
+        return firmMapper.getByName(name);
+    }
 }

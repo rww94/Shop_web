@@ -33,6 +33,7 @@
 
     <div class="orderListItem">
         <c:forEach items="${orders}" var="o">
+            <c:if test="${o.status!='closed'}">
             <table class="orderListItemTable" orderStatus="${o.status}" oid="${o.id}">
                 <tr class="orderListItemFirstTR">
                     <td colspan="2">
@@ -97,7 +98,7 @@
                                     </a>
                                 </c:if>
                                 <c:if test="${o.status=='finished'||o.status=='canceled'}">
-                                    <a href="<%=basePath%>/user/updateOrderStatus?orderId=${o.id}&orderStatus=finished">
+                                    <a href="<%=basePath%>/user/updateOrderStatus?orderId=${o.id}&orderStatus=closed">
                                         <button class="orderListItemConfirm">关闭</button>
                                     </a>
                                 </c:if>
@@ -105,8 +106,8 @@
                         </c:if>
                     </tr>
                 </c:forEach>
-
             </table>
+            </c:if>
         </c:forEach>
     </div>
 </div>

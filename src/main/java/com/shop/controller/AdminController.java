@@ -109,14 +109,24 @@ public class AdminController {
      * */
     @RequestMapping("user_delete")
     public String deleteUser(Integer id){
+
         if (null == id){
             return "fail";
         }
         userService.deleteUser(id);
         return "redirect:/admin/getUserList";
     }
-//    @RequestMapping("firm_delete")
-//    public String
+    /*
+    * 根据id 删除厂商
+    * */
+    @RequestMapping("firm_delete")
+    public String firm_delete(Integer id){
+        if (null == id){
+            return "fail";
+        }
+        firmService.deleteFirm(id);
+        return "redirect:/admin/getFirmList";
+    }
     /*
      * 跳转功能:跳转到添加用户界面
      * */
@@ -131,14 +141,6 @@ public class AdminController {
     @RequestMapping("addFirm")
     public String addFirm(){
         return "admin/addFirm";
-    }
-    /*
-     * 管理员添加厂商
-     * */
-    @RequestMapping("add_firm")
-    public String add_firm(Firm firm){
-//        userService.addUser(user);
-        return "redirect:/admin/getFirmList";
     }
     /*
     * 管理员添加用户
@@ -160,5 +162,26 @@ public class AdminController {
             out.print("<script language=\"javascript\">alert('用户名已存在')</script>");
         }
         return "redirect:/admin/getUserList";
+    }
+    /*
+     * 管理员添加厂商
+     * */
+    @RequestMapping("add_firm")
+    public String add_firm(HttpServletResponse response,Firm firm) throws IOException {
+        if (null == firm){
+            return "fail";
+        }
+        PrintWriter out = response.getWriter();
+
+        List<Firm> old_firms = firmService.getByName(firm.getName());
+        if (old_firms.isEmpty()){
+            firm.setPassword(MD5Util.MD5EncodeUtf8(firm.getPassword()));
+            firmService.addFirm(firm);
+            out.print("<script language=\"javascript\">alert('添加厂商成功')</script>");
+
+        }else{
+            out.print("<script language=\"javascript\">alert('厂商登录名已存在')</script>");
+        }
+        return "redirect:/admin/getFirmList";
     }
 }
