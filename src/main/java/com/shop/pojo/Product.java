@@ -1,4 +1,6 @@
 package com.shop.pojo;
+import org.springframework.web.multipart.MultipartFile;
+
 import java.util.Date;
 
 public class Product {
@@ -38,6 +40,10 @@ public class Product {
     * 商品详细信息
     * */
     private String message;
+    /*
+    * 图片文件
+    * */
+    private MultipartFile file;
 
     public Integer getId() {
         return id;
@@ -109,5 +115,13 @@ public class Product {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public MultipartFile getFile() {
+        return file;
+    }
+
+    public void setFile(MultipartFile file) {
+        this.file = file;
     }
 }

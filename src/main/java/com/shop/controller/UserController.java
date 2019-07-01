@@ -1,17 +1,12 @@
 package com.shop.controller;
 
-import com.shop.pojo.Order;
-import com.shop.pojo.ShopCart;
-import com.shop.service.OrderItemService;
-import com.shop.service.OrderService;
-import com.shop.service.ShopCartService;
+import com.shop.pojo.*;
+import com.shop.service.*;
 import com.shop.util.MD5Util;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.shop.service.UserService;
-import com.shop.pojo.User;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -35,6 +30,8 @@ public class UserController {
     OrderItemService orderItemService;
     @Autowired
     ShopCartService shopCartService;
+    @Autowired
+    ProductService productService;
     /*
      * 跳转功能：到用户登录界面
      * */
@@ -215,6 +212,15 @@ public class UserController {
     public String updateOrderStatus(Integer orderId,String orderStatus){
         if(null==orderId||null==orderStatus){
             return "redirect:userOrder";
+        }
+        //如果取消订单还原所有库存
+        if("canceled".equals(orderStatus)){
+            List<OrderItem> orderItems = orderItemService.getListByOid(orderId);
+            for(OrderItem orderItem:orderItems){
+            Product product = productService.getById(orderItem.getPid());
+                    product.setStock_number(product.getStock_number()+orderItem.getNumber());
+                    productService.updateProduct(product);
+            }
         }
         Date date = new Date();
         orderService.updateStatus(orderId,orderStatus,date);

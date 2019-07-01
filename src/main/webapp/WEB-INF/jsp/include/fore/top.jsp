@@ -27,7 +27,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <a href="<%=basePath %>/user/userOrder">我的订单</a>
                 <a href="<%=basePath %>/user/shopCart">
                 <span style="color:#C40000;margin:0px" class=" glyphicon glyphicon-shopping-cart redColor"></span>
-                购物车</a>
+                购物</a>
         </span>
 </nav>
 

@@ -53,7 +53,7 @@
     <div class="panel panel-warning addDiv">
         <div class="panel-heading">新增产品</div>
         <div class="panel-body">
-            <form method="post" id="addForm" action="<%=basePath%>/firm/product_add">
+            <form method="post" id="addForm" action="<%=basePath%>/firm/product_add"  enctype="multipart/form-data">
                 <table class="addTable">
                     <tr>
                         <td>产品名称</td>
@@ -82,7 +82,7 @@
                     </tr>
                     <tr>
                         <td>图片上传</td>
-                        <td><input type="file" name="file"></td>
+                        <td><input id="file" type="file" name="file"></td>
                     </tr>
                     <tr class="submitTR">
                         <td colspan="2" align="center">

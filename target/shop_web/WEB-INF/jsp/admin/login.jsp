@@ -41,6 +41,9 @@
     <c:if test="${!empty message}">
     alert('${message}')
     </c:if>
+    if(window !=top){
+        top.location.href = url;
+    }
     function login() {//登录
         var value = $("#name").val();
         if (value.length == 0) {

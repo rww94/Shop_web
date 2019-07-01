@@ -21,8 +21,8 @@
         <table class="orderListTitleTable">
             <tr>
                 <td>商品</td>
-                <td width="100px">单价</td>
-                <td width="100px">数量</td>
+                <td width="110px">单价</td>
+                <td width="110px">数量</td>
                 <td width="100px">实付款</td>
                 <td width="110px">订单状态</td>
                 <td width="120px">操作</td>
@@ -54,7 +54,7 @@
                         <td  class="orderItemProductInfoPartTD" width="100px">
                             <div class="orderListItemProductPrice">￥<fmt:formatNumber type="number" value="${oi.product.now_price}" minFractionDigits="2"/></div>
                         </td>
-                        <td  class="orderItemProductInfoPartTD" width="100px">
+                        <td  class="orderItemProductInfoPartTD" width="100px" style="text-align:center">
                             <span class="orderListItemNumber">${oi.number}</span>
                         </td>
                         <c:if test="${st.count==1}">

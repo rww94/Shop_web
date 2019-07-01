@@ -2,10 +2,7 @@ package com.shop.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.shop.pojo.Category;
-import com.shop.pojo.Firm;
-import com.shop.pojo.Order;
-import com.shop.pojo.Product;
+import com.shop.pojo.*;
 import com.shop.service.*;
 import com.shop.util.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.shop.util.Page;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
+
 /*
 * 厂商控制器
 * */
@@ -194,9 +195,18 @@ public class FirmController {
     * 添加商品
     * */
     @RequestMapping("product_add")
-    public String product_add(Product product){
+    public String product_add(HttpServletRequest request, Product product) throws IOException {
         if (null == product){
             return "fail";
+        }
+        if(!product.getFile().isEmpty()) {
+            String name = UUID.randomUUID().toString().replaceAll("-", "");
+            String savePath = request.getSession().getServletContext().getRealPath("/images/productSingle/");
+            System.out.println(savePath);
+            product.getFile().transferTo(new File(savePath+"/"+name+".jpg"));
+            product.setImage(name);
+        }else{
+            product.setImage("default");
         }
         product.setCreate_date(new Date());
         productService.addProduct(product);
@@ -254,6 +264,15 @@ public class FirmController {
     public String updateOrderStatus(Integer orderId,String orderStatus){
         if(null==orderId||null==orderStatus){
             return "redirect:getOrderList";
+        }
+        //如果拒绝订单还原所有库存
+        if("refused".equals(orderStatus)){
+            List<OrderItem> orderItems = orderItemService.getListByOid(orderId);
+            for(OrderItem orderItem:orderItems){
+                Product product = productService.getById(orderItem.getPid());
+                product.setStock_number(product.getStock_number()+orderItem.getNumber());
+                productService.updateProduct(product);
+            }
         }
         Date date = new Date();
         orderService.updateStatus(orderId,orderStatus,date);

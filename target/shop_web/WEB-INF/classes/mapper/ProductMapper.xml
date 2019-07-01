@@ -9,6 +9,7 @@
         <result column="stock_number" property="stock_number" jdbcType="INTEGER" />
         <result column="cid" property="cid" jdbcType="INTEGER" />
         <result column="create_date" property="create_date" jdbcType="TIMESTAMP" />
+        <result column="image" property="image" jdbcType="VARCHAR" />
         <result column="message" property="message" jdbcType="VARCHAR" />
     </resultMap>
 <!--根据种类id查询种类下的商品-->
@@ -31,8 +32,8 @@
 </update>
 <!--    添加新商品-->
 <insert id="addProduct" parameterType="com.shop.pojo.Product">
-    insert into product(name,original_price,now_price,stock_number,cid,create_date,message)
-    values(#{name},#{original_price},#{now_price},#{stock_number},#{cid},#{create_date},#{message})
+    insert into product(name,original_price,now_price,stock_number,cid,create_date,message,image)
+    values(#{name},#{original_price},#{now_price},#{stock_number},#{cid},#{create_date},#{message},#{image})
 </insert>
 <!--    查找所有商品-->
 <select id="getAllProduct" resultMap="ProductResultMapper">

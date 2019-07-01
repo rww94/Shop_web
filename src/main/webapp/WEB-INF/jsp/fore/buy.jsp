@@ -18,15 +18,15 @@
                     <tr>
                         <td class="firstColumn">详细地址<span class="redStar">*</span></td>
 
-                        <td><textarea name="address" placeholder="请填写详细收货地址"></textarea></td>
+                        <td><textarea id="address" name="address" placeholder="请填写详细收货地址"></textarea></td>
                     </tr>
                     <tr>
-                        <td>收货人姓名<span class="redStar">*</span></td>
-                        <td><input  name="receiver" type="text"></td>
+                        <td>收货人姓名 <span class="redStar">*</span></td>
+                        <td><input  id="receiver" name="receiver" type="text"></td>
                     </tr>
                     <tr>
                         <td>手机号码 <span class="redStar">*</span></td>
-                        <td><input name="mobile"  placeholder="请输入11位手机号码" type="text"></td>
+                        <td><input id="mobile" name="mobile"  placeholder="请输入11位手机号码" type="text"></td>
                     </tr>
                     <br/>
                     <tr>
@@ -95,9 +95,33 @@
                 <span class="orderItemTotalSumSpan">￥<fmt:formatNumber type="number" value="${totalPrice}" minFractionDigits="2"/></span>
             </div>
         </div>
-
         <div class="submitOrderDiv">
-            <button type="submit" class="submitOrderButton">提交订单</button>
+            <button type="submit" class="submitOrderButton" onClick="return order()">提交订单</button>
         </div>
     </form>
 </div>
+
+<script type="text/javascript">
+    function order() {//下单
+        var address_value = $("#address").val();
+        if (address_value.length == 0) {
+            alert("地址不能为空!")
+            $("#address")[0].focus();
+            return false;
+        }
+        var receiver_value = $("#receiver").val();
+        if (receiver_value.length == 0) {
+            alert('收货人不能为空')
+            $("#receiver")[0].focus();
+            return false;
+        }
+        var mobile_value = $("#mobile").val();
+        var regMobile =/^0?1[3|4|5|8][0-9]\d{8}$/;
+        if(!regMobile.test(mobile_value)){
+            alert('手机或电话有误')
+            $("#mobile")[0].focus();
+            return false;
+        }
+        return true;
+    }
+</script>

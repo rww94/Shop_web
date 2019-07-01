@@ -138,7 +138,7 @@ public class ForeController {
     * 进入订单填写页
     * */
     @RequestMapping("forebuy")
-    public String buy(Model model, String[] oiid, HttpSession session){
+    public String buy(Model model, String[] oiid){
         if(null == oiid){
             return "redirect:/fore/foreHome";
         }
@@ -255,7 +255,7 @@ public class ForeController {
     * 从购物车进行购买
     * */
     @RequestMapping("foreCartbuy")
-    public String foreCartbuy(Model model, String[] oiid, HttpSession session){
+    public String foreCartbuy(String[] oiid, HttpSession session){
         if(null==oiid){
             return "redirect:/fore/foreHome";
         }
