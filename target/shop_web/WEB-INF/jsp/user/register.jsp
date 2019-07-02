@@ -101,6 +101,8 @@
             }else{
                 return false;
             }
+            var md5_password = hex_md5(password1);
+            $("#password").val(md5_password);
             return true;
         });
     });

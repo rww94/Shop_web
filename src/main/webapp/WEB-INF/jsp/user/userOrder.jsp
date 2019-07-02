@@ -52,7 +52,7 @@
                                 ${oi.product.name}
                         </td>
                         <td  class="orderItemProductInfoPartTD" width="100px">
-                            <div class="orderListItemProductPrice">￥<fmt:formatNumber type="number" value="${oi.product.now_price}" minFractionDigits="2"/></div>
+                            <div class="orderListItemProductPrice">￥<fmt:formatNumber type="number" value="${oi.price}" minFractionDigits="2"/></div>
                         </td>
                         <td  class="orderItemProductInfoPartTD" width="100px" style="text-align:center">
                             <span class="orderListItemNumber">${oi.number}</span>
@@ -97,9 +97,9 @@
                                         <button class="orderListItemConfirm">确认收货</button>
                                     </a>
                                 </c:if>
-                                <c:if test="${o.status=='finished'||o.status=='canceled'}">
+                                <c:if test="${o.status=='finished'||o.status=='canceled'||o.status=='refused'}">
                                     <a href="<%=basePath%>/user/updateOrderStatus?orderId=${o.id}&orderStatus=closed">
-                                        <button class="orderListItemConfirm">关闭</button>
+                                        <button class="orderListItemConfirm">关闭订单</button>
                                     </a>
                                 </c:if>
                             </td>
@@ -118,6 +118,15 @@
 </c:if>
 
 <script>
+    $(".orderListItemConfirm").click(function(){
+        var value = $(this).text()
+        var msg = '是否'+value+'?';
+        if(confirm(msg)){
+            return true;
+        }else{
+            return false;
+        }
+    });
     $(function(){
         $("a[orderStatus]").click(function(){
             var orderStatus = $(this).attr("orderStatus");

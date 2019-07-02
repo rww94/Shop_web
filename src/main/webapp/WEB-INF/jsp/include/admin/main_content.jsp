@@ -24,8 +24,8 @@
 
 <body>
 <div class="container-fluid">
-    <h3 style="text-align:center;">当前用户:&nbsp;&nbsp;
-        <font color="red"><%= session.getAttribute("admin")%></font>&nbsp;&nbsp;
+    <h3 style="text-align:center;">当前管理员:&nbsp;&nbsp;
+        <font color="red"><%= session.getAttribute("admin")%></font>&nbsp;&nbsp;<br/><br/>
         登录时间:&nbsp;&nbsp;<font color="red"><%=today %></font></h3>
 
 </div>

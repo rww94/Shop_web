@@ -38,7 +38,7 @@ public class OrderServiceimpl implements OrderService {
             // 更新订单项
             orderItemService.updateById(orderItem);
             // 计算总价格
-            totalPrice += orderItem.getProduct().getNow_price()*orderItem.getNumber();
+            totalPrice += orderItem.getPrice()*orderItem.getNumber();
         }
         return totalPrice;
     }

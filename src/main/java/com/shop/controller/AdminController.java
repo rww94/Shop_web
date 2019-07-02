@@ -36,6 +36,7 @@ public class AdminController {
     UserService userService;
     @Autowired
     FirmService firmService;
+
     /*
     * 跳转功能:管理员登陆跳转
     * */
@@ -43,6 +44,7 @@ public class AdminController {
     public String adminLogin(){
         return "admin/login";
     }
+
     /*
     * 登陆验证
     * */
@@ -53,7 +55,7 @@ public class AdminController {
         if(null==name||null==password){
             return "admin/login";
         }
-        password = MD5Util.MD5EncodeUtf8(password);
+//        password = MD5Util.MD5EncodeUtf8(password);
         Admin admin = adminService.queryForLogin(name,password);
         // 用户不存在则回到登录界面
         if (null == admin){
@@ -64,6 +66,7 @@ public class AdminController {
         session.setAttribute("admin",admin.getName());
         return "admin/adminHome";
     }
+
     /*
     * 管理员退出
     * */
@@ -89,6 +92,7 @@ public class AdminController {
         model.addAttribute("users",users);
         return "admin/listUser";
     }
+
     /*
     * 厂商信息列表
     * */
@@ -104,6 +108,7 @@ public class AdminController {
         model.addAttribute("firms",firms);
         return "admin/listFirm";
     }
+
     /*
      * 根据id 删除会员
      * */
@@ -116,6 +121,7 @@ public class AdminController {
         userService.deleteUser(id);
         return "redirect:/admin/getUserList";
     }
+
     /*
     * 根据id 删除厂商
     * */
@@ -127,6 +133,7 @@ public class AdminController {
         firmService.deleteFirm(id);
         return "redirect:/admin/getFirmList";
     }
+
     /*
      * 跳转功能:跳转到添加用户界面
      * */
@@ -142,6 +149,7 @@ public class AdminController {
     public String addFirm(){
         return "admin/addFirm";
     }
+
     /*
     * 管理员添加用户
     * */
@@ -163,6 +171,7 @@ public class AdminController {
         }
         return "redirect:/admin/getUserList";
     }
+
     /*
      * 管理员添加厂商
      * */

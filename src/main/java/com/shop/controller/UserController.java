@@ -35,10 +35,12 @@ public class UserController {
     /*
      * 跳转功能：到用户登录界面
      * */
+
     @RequestMapping("Login")
     public String Login(){
         return "user/login";
     }
+
     /*
     * 跳转功能：到用户注册界面
     * */
@@ -46,6 +48,7 @@ public class UserController {
     public String Register(){
         return "user/register";
     }
+
     /*
      * 用户登录后台处理
      * */
@@ -57,7 +60,7 @@ public class UserController {
             return "redirect:/fore/foreHome";
         }
         //进行MD5加密验证用户密码
-        password = MD5Util.MD5EncodeUtf8(password);
+//        password = MD5Util.MD5EncodeUtf8(password);
         User user = userService.queryForLogin(name,password);
         if (null == user){
             request.setAttribute("message","账号密码有误");
@@ -67,6 +70,7 @@ public class UserController {
         session.setAttribute("user",user);
         return "redirect:/fore/foreHome";
     }
+
     /*
     * 用户注册后台处理
     * */
@@ -92,6 +96,7 @@ public class UserController {
             return "user/register";
         }
     }
+
     /*
     * 检查用户是否登陆
     * */
@@ -103,6 +108,7 @@ public class UserController {
             return "success";
         return "fail";
     }
+
     /*
     *Ajax验证 模态窗口登录账号密码是否正确
     * */
@@ -130,6 +136,7 @@ public class UserController {
         session.removeAttribute("user");
         return "redirect:/fore/foreHome";
     }
+
     /*
     * 用户详情展示
     * */
@@ -142,6 +149,7 @@ public class UserController {
         session.setAttribute("user",user);
         return "user/userHome";
     }
+
     /*
     * 跳转功能：修改用户信息
     * */
@@ -151,6 +159,7 @@ public class UserController {
         session.setAttribute("u",user);
         return "user/editUser";
     }
+
     /*
     * 跳转功能：修改用户密码
     * */
@@ -160,6 +169,7 @@ public class UserController {
         session.setAttribute("u",user);
         return "user/editPassword";
     }
+
     /*
     * 修改用户信息
     * */
@@ -174,6 +184,7 @@ public class UserController {
         session.setAttribute("user",user);
         return "redirect:userInformation?id="+user.getId();
     }
+
     /*
     * 修改用户密码
     * */
@@ -189,6 +200,7 @@ public class UserController {
         out.print("<script language=\"javascript\">alert('修改成功！请重新登录')</script>");
         return "redirect:Login";
     }
+
     /*
     * 跳转功能：跳转到用户订单管理页面
     * */
@@ -205,6 +217,7 @@ public class UserController {
         }
         return "user/userOrder";
     }
+
     /*
     * 用户更新订单状态（确认收货和取消）
     * */
@@ -217,15 +230,18 @@ public class UserController {
         if("canceled".equals(orderStatus)){
             List<OrderItem> orderItems = orderItemService.getListByOid(orderId);
             for(OrderItem orderItem:orderItems){
-            Product product = productService.getById(orderItem.getPid());
+                Product product = productService.getById(orderItem.getPid());
+                if(null!=product){
                     product.setStock_number(product.getStock_number()+orderItem.getNumber());
                     productService.updateProduct(product);
+                }
             }
         }
         Date date = new Date();
         orderService.updateStatus(orderId,orderStatus,date);
         return "redirect:userOrder";
     }
+
     /*
     * 得到用户购物车信息项列表
     * */

@@ -65,12 +65,11 @@ public class OrderItemServiceImpl implements OrderItemService {
                 // 订单里的订单项数量
                 int totalNumber = 0;
                 for (OrderItem orderItem : orderItems) {
-                    if (null != orderItem.getProduct() &&  null != orderItem.getNumber()){
-                        totalPrice += orderItem.getNumber() * (orderItem.getPrice());
-                        totalNumber += orderItem.getNumber();
-                    }
+                    totalPrice += orderItem.getNumber() * (orderItem.getPrice());
+                    totalNumber += orderItem.getNumber();
                 }
                 // 为订单设置总价格
+                System.out.println("totalPrice="+totalPrice);
                 order.setTotalPrice(totalPrice);
                 // 为订单设置订单项总数量
                 order.setProductNumber(totalNumber);

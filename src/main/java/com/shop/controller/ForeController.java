@@ -48,6 +48,7 @@ public class ForeController {
         model.addAttribute("categories",categories);
         return "fore/foreHome";
     }
+
     /*
     * 商品分类展示
     * */
@@ -69,6 +70,7 @@ public class ForeController {
         model.addAttribute("products",products);
         return "fore/showCategory";
     }
+
     /*
     * 具体商品信息
     * */
@@ -87,6 +89,7 @@ public class ForeController {
         model.addAttribute("product",product);
         return "fore/showProduct";
     }
+
     /*
     * 主页搜素功能
     * */
@@ -109,6 +112,7 @@ public class ForeController {
         model.addAttribute("products",products);
         return "fore/searchResult";
     }
+
     /*
     * 订单第一步，生成订单元素项
     * */
@@ -134,6 +138,7 @@ public class ForeController {
         oiid = orderItem.getId();
         return "redirect:forebuy?oiid="+oiid;
     }
+
     /*
     * 进入订单填写页
     * */
@@ -151,19 +156,24 @@ public class ForeController {
             totalPrice += orderItem.getPrice()*orderItem.getNumber();
             orderItems.add(orderItem);
         }
+
         /*
         * 生成新订单
         * */
         Order order = new Order();
-        String orderCode = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()) + RandomUtils.nextInt(10000);
+        Date date = new Date();
+        String orderCode = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(date) + RandomUtils.nextInt(10000);
         order.setOrderCode(orderCode);
+        order.setCreate_date(date);
         //订单入库和为订单元素项设置oid
         orderService.addOrder(order,orderItems);
+
         model.addAttribute("totalPrice", totalPrice);
         model.addAttribute("order", order);
         model.addAttribute("orderItems",orderItems);
         return "fore/buy";
     }
+
     /*
     * 创建订单
     * */
@@ -177,6 +187,9 @@ public class ForeController {
         //判断库存是否充足
         for(OrderItem orderItem:orderItems){
             Product product = productService.getById(orderItem.getPid());
+            if(null == product){
+                return "fail";
+            }
             if(product.getStock_number()<orderItem.getNumber()){
                 return "noEnough";
             }else{
@@ -186,7 +199,6 @@ public class ForeController {
             }
         }
         User user = (User) session.getAttribute("user");
-        order.setCreate_date(new Date());
         order.setUid(user.getId());
         //设置订单状态（等待支付）
         order.setStatus(OrderService.waitPay);
@@ -194,6 +206,7 @@ public class ForeController {
         orderService.updateOrder(order);
         return "redirect:forealipay?orderId="+order.getId() + "&totalPrice=" + totalPrice;
     }
+
     /*
     * 跳转功能：发起支付请求
     * */
@@ -201,6 +214,7 @@ public class ForeController {
     public String alipay(){
         return "fore/alipay";
     }
+
     /*
     * 点击确认支付,服务端跳转到支付页面
     * */
@@ -219,6 +233,7 @@ public class ForeController {
         model.addAttribute("order",order);
         return "fore/pay";
     }
+
     /*
     * 添加到购物车
     * */
@@ -251,6 +266,7 @@ public class ForeController {
         }
         return "success";
     }
+
     /*
     * 从购物车进行购买
     * */

@@ -14,14 +14,14 @@
     <div class="listDataTableDiv" style="margin-top: 20px; margin-left: 0px; margin-right: 50px">
         <table class="table table-bordered table-hover1  table-condensed">
             <thead>
-            <tr class="success">
-                <th width="80px">ID</th>
-                <th width="100px">状态</th>
-                <th width="120px">总金额</th>
-                <th width="100px">买家名称</th>
-                <th>收货地址</th>
-                <th width="100px">创建时间</th>
-                <th width="120px">操作</th>
+            <tr class="success" >
+                <th width="80px" style="text-align: center">ID</th>
+                <th width="100px" style="text-align: center">状态</th>
+                <th width="120px" style="text-align: center">总金额</th>
+                <th width="100px" style="text-align: center">买家名称</th>
+                <th style="text-align: center">收货地址</th>
+                <th width="110px" style="text-align: center">创建时间</th>
+                <th width="120px" style="text-align: center">操作</th>
             </tr>
             </thead>
             <tbody>
@@ -35,8 +35,8 @@
                     <td align="center"><fmt:formatDate value="${o.create_date}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                     <td style="width:200px;"align="center">
                         <c:if test="${o.status=='waitConfirm'}">
-                            <a id="confirmbtn" href="updateOrderStatus?orderId=${o.id}&orderStatus=confirmed">
-                                <button style="width: 60px" class="orderPageCheckOrderItems btn btn-primary btn-xs" >确认</button>
+                            <a  href="updateOrderStatus?orderId=${o.id}&orderStatus=confirmed">
+                                <button  style="width: 60px" class="orderPageCheckOrderItems btn btn-primary btn-xs">接受</button>
                             </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <a href="updateOrderStatus?orderId=${o.id}&orderStatus=refused">
                                 <button style="width: 60px" class="orderPageCheckOrderItems btn btn-primary btn-xs">拒绝</button>
@@ -85,6 +85,18 @@
 </div>
 
 <script>
+    $(".orderPageCheckOrderItems").click(function(){
+        var value = $(this).text()
+        if(value!='查看详情'){
+            var msg = '是否'+value+'?';
+            if(confirm(msg)){
+                return true;
+            }else{
+                return false;
+            }
+        }
+    });
+
     $(function(){
         $("tr.orderPageOrderItemTR").hide();
         $("button.orderPageCheckOrderItems").click(function(){

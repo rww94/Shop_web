@@ -53,7 +53,7 @@ public class FirmController {
             return "redirect:Login";
         }
         //进行MD5加密验证厂商密码
-        password = MD5Util.MD5EncodeUtf8(password);
+//        password = MD5Util.MD5EncodeUtf8(password);
         Firm firm = firmService.queryForLogin(name,password);
         // 厂商不存在则回到登录界面
         if (null == firm){

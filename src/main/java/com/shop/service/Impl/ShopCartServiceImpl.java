@@ -16,6 +16,7 @@ public class ShopCartServiceImpl implements ShopCartService {
     ShopCartMapper shopCartMapper;
     @Autowired
     ProductService productService;
+
     @Override
     public List<ShopCart> getListByUid(Integer uid) {
         List<ShopCart> shopCarts = shopCartMapper.getListByUid(uid);
@@ -28,7 +29,9 @@ public class ShopCartServiceImpl implements ShopCartService {
     @Override
     public void setProduct(ShopCart shopCart) {
         Product product = productService.getById(shopCart.getPid());
-        shopCart.setProduct(product);
+        if(null!=product) {
+            shopCart.setProduct(product);
+        }
     }
 
     @Override

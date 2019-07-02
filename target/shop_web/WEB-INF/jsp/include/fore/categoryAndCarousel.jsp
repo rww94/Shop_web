@@ -2,13 +2,10 @@
          pageEncoding="UTF-8" isELIgnored="false"%>
 
 <div class="categoryWithCarousel">
-
     <div class="headbar show1">
         <div class="head" onclick="showcategoryMenu()">
-
             <span style="margin-left:50px" class="glyphicon glyphicon-th-list"></span>
             <span style="margin-left:50px" >商品分类</span>
-
         </div>
         <div class="rightMenu">
             <c:forEach items="${categories}" var="c" varStatus="st">

@@ -15,10 +15,10 @@
                     <img selectit="false" class="selectAllItem" src="../images/site/cartNotSelected.png">
                     全选
                 </th>
-                <th>商品信息</th>
-                <th>单价</th>
-                <th>数量</th>
-                <th width="120px">金额</th>
+                <th style="width:380px;text-align: center">商品信息</th>
+                <th style="text-align: center">单价</th>
+                <th style="text-align: center;width:100px">数量</th>
+                <th style="text-align: center;width:120px">金额</th>
                 <th class="operation">操作</th>
             </tr>
             </thead>
@@ -30,24 +30,24 @@
                         <a style="display:none" href="#nowhere"><img src="../images/site/cartSelected.png"></a>
                         <img class="cartProductImg"  src="../images/productSingle/${oi.product.image}.jpg">
                     </td>
-                    <td>
+                    <td style="text-align: center">
                         <div class="cartProductLinkOutDiv">
                             <a href="<%=basePath%>/fore/foreproduct?pid=${oi.product.id}" class="cartProductLink">${oi.product.name}</a>
                         </div>
                     </td>
-                    <td>
+                    <td style="text-align: center">
                         <span  class="cartProductItemPromotionPrice">￥${oi.product.now_price}</span>
 
                     </td>
-                    <td>
+                    <td style="text-align: center">
                          <span pid="${oi.product.id}" oiid="${oi.id}" class="orderItemNumberSetting">${oi.number}</span>
                     </td>
-                    <td >
+                    <td style="text-align: center">
 							<span class="cartProductItemSmallSumPrice" oiid="${oi.id}" pid="${oi.product.id}" >
 							￥<fmt:formatNumber type="number" value="${oi.product.now_price*oi.number}" minFractionDigits="2"/>
 							</span>
                     </td>
-                    <td>
+                    <td style="text-align: center">
                         <a deleteLink="true" href="shopcart_delete?id=${oi.id}"><span>删除</span></a>
                     </td>
                 </tr>

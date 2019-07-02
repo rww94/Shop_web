@@ -1462,7 +1462,7 @@ a.cartProductLink:hover {
 
 div.cartProductLinkOutDiv {
     position: relative;
-    height: 80px;
+    /*height: 80px;*/
 }
 
 div.cartProductLinkInnerDiv {

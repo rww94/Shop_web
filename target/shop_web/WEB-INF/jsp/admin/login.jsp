@@ -37,6 +37,7 @@
 <div class="screenbg">
 </div>
 <script type="text/javascript" src="../js/jquery/2.0.0/jquery.min.js"></script>
+<script src="../js/md5.js"></script>
 <script type="text/javascript">
     <c:if test="${!empty message}">
     alert('${message}')
@@ -57,6 +58,9 @@
             $("#password")[0].focus();
             return false;
         }
+        var md5_password = hex_md5(value1);
+        $("#password").val(md5_password);
+        return true;
     }
 </script>
 </body>
