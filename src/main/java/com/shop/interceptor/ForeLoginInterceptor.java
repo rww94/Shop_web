@@ -12,7 +12,7 @@ import java.util.Arrays;
 
 public class ForeLoginInterceptor extends HandlerInterceptorAdapter {
     /*
-     * 在业务处理器处理请求之前调用
+     * 在处理器处理请求之前调用
      * 如果返回false 退出拦截器 不执行Controller 里的方法
      * 如果返回true 执行被拦截的Controller 的方法
      */
@@ -28,7 +28,9 @@ public class ForeLoginInterceptor extends HandlerInterceptorAdapter {
                 "fore_login",
                 "forecategory",
                 "foreproduct",
-                "foresearch"
+                "foresearch",
+                "Test",
+                "test"
         };
         String uri = request.getRequestURI();
         uri = StringUtils.remove(uri, contextPath);

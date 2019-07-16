@@ -78,7 +78,7 @@
                             <span class="orderItemProductNumber">${oi.number}</span>
                         </td>
                         <td><span class="orderItemUnitSum">
-						￥<fmt:formatNumber type="number" value="${totalPrice}" minFractionDigits="2"/>
+						￥<fmt:formatNumber type="number" value="${oi.price*oi.number}" minFractionDigits="2"/>
 						</span></td>
                     </tr>
                 </c:forEach>

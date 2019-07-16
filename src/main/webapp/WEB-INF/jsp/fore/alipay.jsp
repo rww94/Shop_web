@@ -52,6 +52,7 @@
     </div>
 </div>
 
+<script src="../js/md5.js"></script>
 <script>
     $(".confirmPay").click(function(){
         $("#loginModal").modal('show');
@@ -59,16 +60,17 @@
     $("button.loginSubmitButton").click(function(){
         var name = $("#name").val();
         var password = $("#password").val();
-
         if(0==name.length||0==password.length){
             $("span.errorMessage").html("请输入账号密码");
             $("div.loginErrorMessageDiv").show();
             return false;
         }
+        var md5_password = hex_md5(password);
+
         var page = "../user/foreloginAjax";
         $.post(
             page,
-            {"name":name,"password":password},
+            {"name":name,"password":md5_password},
             function(result){
                 if("success"==result){
                     self.location.href="forepay?orderId=${param.orderId}&totalPrice=${param.totalPrice}"

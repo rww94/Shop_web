@@ -82,14 +82,11 @@ public class UserController {
         //数据库查询是否有老用户和注册名相同
         List<User> old_users = userService.getByName(user.getName());
         if (old_users.isEmpty()){
-            //如果没有对密码进行MD5加密
-            user.setPassword(MD5Util.MD5EncodeUtf8(user.getPassword()));
             //添加用户到数据库
             userService.addUser(user);
             String s = "注册成功!请登录 ";
             request.setAttribute("message",s);
             return "user/login";
-
         }else{
             String s = "用户名已经存在! ";
             request.setAttribute("message",s);
@@ -119,13 +116,23 @@ public class UserController {
             return "redirect:/fore/foreHome";
         }
         //MD5加密验证密码是否正确
-        password = MD5Util.MD5EncodeUtf8(password);
-        User user = userService.queryForLogin(name,password);
-        if (null == user){
-            return "fail";
+//        password = MD5Util.MD5EncodeUtf8(password);
+        //判断是否是同一个登录对象
+        User user_Logined = (User)session.getAttribute("user");
+        if(null!=user_Logined){
+            if(!user_Logined.getName().equals(name)){
+                return "fail";
+            }else{
+                return "success";
+            }
+        }else{
+            User user = userService.queryForLogin(name,password);
+            if (null == user){
+                return "fail";
+            }
+            session.setAttribute("user",user);
+            return "success";
         }
-        session.setAttribute("user",user);
-        return "success";
     }
 
     /*
@@ -155,6 +162,9 @@ public class UserController {
     * */
     @RequestMapping("userInformation")
     public String userInformation(Integer id, HttpSession session){
+        if(null==id){
+            return "user/login";
+        }
         User user =  userService.getById(id);
         session.setAttribute("u",user);
         return "user/editUser";
@@ -165,6 +175,9 @@ public class UserController {
     * */
     @RequestMapping("userPassword")
     public String userPassword(Integer id, HttpSession session){
+        if(null==id){
+            return "user/login";
+        }
         User user =  userService.getById(id);
         session.setAttribute("u",user);
         return "user/editPassword";
@@ -175,10 +188,11 @@ public class UserController {
     * */
     @RequestMapping("editUser")
     public String editUser(User user, HttpSession session){
-        System.out.println("用户邮箱："+user.getEmail());
+        if(null==user){
+            return "user/login";
+        }
         //编辑用户信息
         userService.editUser(user);
-
         //重新保存用户Session信息
         user =  userService.getById(user.getId());
         session.setAttribute("user",user);
@@ -190,8 +204,11 @@ public class UserController {
     * */
     @RequestMapping("editPassword")
     public String editPassword(User user, HttpSession session, HttpServletResponse response) throws IOException {
+        if(null==user){
+            return "user/login";
+        }
         //MD5加密
-        user.setPassword(MD5Util.MD5EncodeUtf8(user.getPassword()));
+//        user.setPassword(MD5Util.MD5EncodeUtf8(user.getPassword()));
         //Dao层编辑用户密码
         userService.editUserByPassword(user);
         //删除用户Session返回重新登录界面

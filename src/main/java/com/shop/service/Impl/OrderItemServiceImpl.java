@@ -69,7 +69,6 @@ public class OrderItemServiceImpl implements OrderItemService {
                     totalNumber += orderItem.getNumber();
                 }
                 // 为订单设置总价格
-                System.out.println("totalPrice="+totalPrice);
                 order.setTotalPrice(totalPrice);
                 // 为订单设置订单项总数量
                 order.setProductNumber(totalNumber);
@@ -78,7 +77,6 @@ public class OrderItemServiceImpl implements OrderItemService {
             }
         }
     }
-
     @Override
     public void fillOrder(List<Order> orders) {
         if (null != orders){
@@ -87,5 +85,4 @@ public class OrderItemServiceImpl implements OrderItemService {
             }
         }
     }
-
 }

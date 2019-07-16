@@ -57,6 +57,20 @@
 <script>
     $(function(){
         $("#editForm").submit(function(){
+            var telephone = $("#telephone").val();
+            var email = $("#email").val();
+            var regMobile =/^0?1[3|4|5|8][0-9]\d{8}$/;
+            var regEmail = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+            if((telephone.length!=0)&&(!regMobile.test(telephone))){
+                alert('手机或电话有误')
+                $("#telephone")[0].focus();
+                return false;
+            }
+            if((email.length!=0)&&(!regEmail.test(email))){
+                alert('邮箱格式错误')
+                $("#telephone")[0].focus();
+                return false;
+            }
             var msg = "确认修改信息吗?\n请确认！";
             if (confirm(msg)==true){
                 return true;

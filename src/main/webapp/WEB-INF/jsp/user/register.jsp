@@ -53,7 +53,7 @@
         </div>
         <div>
             <label>请输入邮箱：</label>
-            <input  id="email" name="email" type="text" class="form-control" maxlength="15"/>
+            <input  id="email" name="email" type="text" class="form-control" maxlength="30"/>
         </div>
         <br/>
         <div class="register">
@@ -82,6 +82,7 @@
             var name = $("#name").val().length;
             var password1 = $("#password").val();
             var password2 = $("#password-confirm").val();
+            var telephone = $("#telephone").val();
             if (name == 0){
                 alert("用户名不能为空!");
                 return false;
@@ -94,7 +95,20 @@
                 alert("两次密码不一致!")
                 return false;
             }
-
+            var telephone = $("#telephone").val();
+            var email = $("#email").val();
+            var regMobile =/^0?1[3|4|5|8][0-9]\d{8}$/;
+            var regEmail = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+            if((telephone.length!=0)&&(!regMobile.test(telephone))){
+                alert('手机或电话有误')
+                $("#telephone")[0].focus();
+                return false;
+            }
+            if((email.length!=0)&&(!regEmail.test(email))){
+                alert('邮箱格式错误')
+                $("#telephone")[0].focus();
+                return false;
+            }
             var msg = "确认注册吗?\n请确认！";
             if (confirm(msg)==true){
                 return true;

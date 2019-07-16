@@ -119,6 +119,7 @@
         </div>
     </div>
 </div>
+<script src="../js/md5.js"></script>
 <script>
     $(function(){
         var stock = ${product.stock_number};
@@ -215,10 +216,12 @@
                 $("div.loginErrorMessageDiv").show();
                 return false;
             }
+
+            var md5_password = hex_md5(password);
             var page = "../user/foreloginAjax";
             $.post(
                 page,
-                {"name":name,"password":password},
+                {"name":name,"password":md5_password},
                 function(result){
                     if("success"==result){
                         location.reload();

@@ -51,7 +51,8 @@
                 alert("两次密码不一致!")
                 return false;
             }
-
+            var md5_password = hex_md5(password1);
+            $("#password").val(md5_password);
             var msg = "确认修改密码吗?\n请确认！";
             if (confirm(msg)==true){
                 return true;

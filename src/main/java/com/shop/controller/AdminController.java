@@ -164,14 +164,9 @@ public class AdminController {
         if (old_users.isEmpty()){
             user.setPassword(MD5Util.MD5EncodeUtf8(user.getPassword()));
             userService.addUser(user);
-            out.print("<script language=\"javascript\">alert('添加用户成功')</script>");
-
-        }else{
-            out.print("<script language=\"javascript\">alert('用户名已存在')</script>");
         }
         return "redirect:/admin/getUserList";
     }
-
     /*
      * 管理员添加厂商
      * */
@@ -186,10 +181,6 @@ public class AdminController {
         if (old_firms.isEmpty()){
             firm.setPassword(MD5Util.MD5EncodeUtf8(firm.getPassword()));
             firmService.addFirm(firm);
-            out.print("<script language=\"javascript\">alert('添加厂商成功')</script>");
-
-        }else{
-            out.print("<script language=\"javascript\">alert('厂商登录名已存在')</script>");
         }
         return "redirect:/admin/getFirmList";
     }

@@ -161,13 +161,10 @@ public class ForeController {
         * 生成新订单
         * */
         Order order = new Order();
-        Date date = new Date();
-        String orderCode = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(date) + RandomUtils.nextInt(10000);
+        String orderCode = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()) + RandomUtils.nextInt(10000);
         order.setOrderCode(orderCode);
-        order.setCreate_date(date);
         //订单入库和为订单元素项设置oid
         orderService.addOrder(order,orderItems);
-
         model.addAttribute("totalPrice", totalPrice);
         model.addAttribute("order", order);
         model.addAttribute("orderItems",orderItems);
@@ -199,6 +196,7 @@ public class ForeController {
             }
         }
         User user = (User) session.getAttribute("user");
+        order.setCreate_date(new Date());
         order.setUid(user.getId());
         //设置订单状态（等待支付）
         order.setStatus(OrderService.waitPay);
