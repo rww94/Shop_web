@@ -46,7 +46,7 @@ public class FirmController {
     * 厂商登陆处理
     * */
     @RequestMapping("firm_login")
-    public String firmlogin(HttpServletRequest request, HttpSession session){
+    public String firmLogin(HttpServletRequest request, HttpSession session){
         String name = request.getParameter("name");
         String password = request.getParameter("password");
         if(null==name||null==password){

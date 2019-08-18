@@ -49,7 +49,7 @@ public class AdminController {
     * 登陆验证
     * */
     @RequestMapping("admin_login")
-    public String adminlogin(HttpServletRequest request,HttpSession session){
+    public String adminLogin(HttpServletRequest request,HttpSession session){
         String name = request.getParameter("name");
         String password = request.getParameter("password");
         if(null==name||null==password){

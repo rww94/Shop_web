@@ -1,29 +1,46 @@
 package com.shop.service;
 
+import com.shop.mapper.CategoryMapper;
 import com.shop.pojo.Category;
+import org.junit.Before;
 import org.junit.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+
 import java.util.List;
 
-public class CategoryServiceServiceTest extends BaseServiceTest {
+import static org.mockito.Matchers.any;
 
-    private Integer id = 12;
-    private Integer fid = 10;
+public class CategoryServiceServiceTest{
+
+    @InjectMocks
+    CategoryService categoryService;
+
+    @Mock
+    CategoryMapper categoryMapper;
+
+    @Before
+    public void setUp() {
+        MockitoAnnotations.initMocks(this);
+    }
+
     @Test
     public void getList() {
-        List<Category> list = categoryService.getList();
+        Mockito.when(categoryMapper.getListByfid(any(Integer.class))).thenReturn(null);
+        List<Category> list = categoryService.getListByfid(any(Integer.class));
         System.out.println(list);
     }
 
     @Test
     public void getListByfid() {
-        List<Category> listByfid = categoryService.getListByfid(fid);
-        System.out.println(listByfid);
+
     }
 
     @Test
     public void getById() {
-        Category byId = categoryService.getById(id);
-        System.out.println(byId);
+
     }
 
     @Test

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    $(function () {
+            $("#testbtn").on("click",function () {
+                var obj = {name:$("#name").val(),password:$("#password").val()};
+                var jsonstr = JSON.stringify(obj);
+
+                $.ajax({
+                    type: "POST",
+                    url: "fore/test",
+                    contentType: "application/json",
+                    data:jsonstr,
+                    dataType: "json",
+                    success: function (result) {
+                        alert(result);
+                    }
+                })
+            })
+    });
+</script>
+<body>
+    <form id="test">
+        姓名：<input id="name" name="name" type="text">
+        密码：<input id="password" name="password" type="text">
+        <button id="testbtn" type="button">测试</button>
+    </form>
+
+</body>
+</html>
